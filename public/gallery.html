@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./uitwerk.css">
+    <title>Document</title>
+</head>
+<body>
+
+<!-- IMPORT MAP -->
+<!-- <script type="importmap">
+    {
+      "imports": {
+        "three": "https://threejs.org/build/three.module.js",
+        "three/addons/": "https://threejs.org/examples/jsm/"
+      }
+    }
+</script> -->
+
+<script>
+    /**
+     * We want to test a few things here
+     * 
+     * 1. threejs new topics we learned particles, design integration
+     * 2. scroll logging, we want to know how much user scrolled in order to deliver a new div
+     */
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Particle Explosion in Three.js</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+    </style>
+</head>
+
+<!-- <ul data-title="preserve-3D">
+    <li>aap</li>
+    <li>noot</li>
+    <li>mies</li>
+    <li>wim</li>
+    <li>zus</li>
+    <li>jet</li>
+    <li>teun</li>
+    <li>vuur</li>
+    <li>gijs</li>
+    <li>lam</li>
+    <li>kees</li>
+    <li>bok</li>
+</ul> -->
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.min.js"></script>
+<script>
+    let scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x000000);
+    let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    let renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    let particleGeometry = new THREE.BufferGeometry();
+    let particleCount = 1000;
+    let posArray = new Float32Array(particleCount * 3); // Position array
+    let velocityArray = []; // Velocity array for particles
+
+    for (let i = 0; i < particleCount; i++) {
+        posArray[i * 3] = 0; // x
+        posArray[i * 3 + 1] = 0; // y
+        posArray[i * 3 + 2] = 0; // z
+        // Assign random velocities
+        velocityArray.push({
+            x: (Math.random() - 0.5) * 0.1,
+            y: (Math.random() - 0.5) * 0.1,
+            z: (Math.random() - 0.5) * 0.1
+        });
+    }
+
+    particleGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+    let particleMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 0.05 });
+    let particles = new THREE.Points(particleGeometry, particleMaterial);
+    scene.add(particles);
+
+    camera.position.z = 5;
+
+    function animate() {
+        requestAnimationFrame(animate);
+
+        let positions = particleGeometry.attributes.position.array;
+        for (let i = 0; i < particleCount; i++) {
+            positions[i * 3] += velocityArray[i].x;
+            positions[i * 3 + 1] += velocityArray[i].y;
+            positions[i * 3 + 2] += velocityArray[i].z;
+        }
+        particleGeometry.attributes.position.needsUpdate = true;
+
+        renderer.render(scene, camera);
+    }
+
+    animate();
+
+
+    
+
+</script>
+
+</body>
+</html>

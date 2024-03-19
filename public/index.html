@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <title>Gems 1</title>
+  </head>
+
+  <!-- BODY -->
+  <body>
+    <!-- NAV -->
+    <nav class="navbar">
+      <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
+      <div class="nav-content">
+        <a href="#home">Dashboard</a>
+        <a href="#news">Gallery</a>
+        <a href="#news">Mint</a>
+        <a href="#about">Creators</a>
+      </div>
+    </nav>
+
+    <nav class="navbar__mobile">
+      <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
+      <img class="nav-image" src="./images/menu.png" alt="" />
+    </nav>
+
+    <nav class="navbar__mobile__open">
+      <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
+      <div class="nav-content">
+        <a href="#home">Dashboard</a>
+        <a href="#news">Gallery</a>
+        <a href="#news">Mint</a>
+        <a href="#about">Creators</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <div id="hero" class="section-block">
+      <div class="title-content" style="text-align: left">
+        <h2 class="title1">
+          <span>JOIN</span> <span>THE</span><br />
+          <span class="neo1">GALACTIC</span><br />
+          <span>BATTLE</span>
+        </h2>
+
+        <p class="infoText1">
+          Enter the world of Shadawi - Discover 3D specimens powered by Polygon
+          blockchain. Collect, Transform, and Battle, Become the ultimate mage.
+        </p>
+
+        <div class="hero-btns-container">
+          <button class="pos-btn">Gallery</button>
+          <button class="neg-btn">Dashboard ></button>
+        </div>
+      </div>
+
+      <div class="abc"><!-- TEST --></div>
+    </div>
+
+    <!-- SECTION 1 -->
+    <div class="section-block">
+      <div class="section__content">
+        <div class="content__left">
+          <!-- Canvas ThreeJs-->
+          <img src="./images/pic1.png" alt="" />
+        </div>
+
+        <div class="content__right ttbox">
+          <h3 class="title1" style="width: min-content; font-size: 3vw">
+            <span>A STORYLINE</span>
+            <span>MADE FOR</span>
+            <span>ADVENTURERS</span>
+          </h3>
+          <p>
+            In a universe molded by ancient powers, the key lies within the
+            grasp of its wielders...
+          </p>
+          <p class="infoText1">
+            Watch Legends Series ->
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div class="section-block">
+      <div class="section__content">
+        
+        <div class="content__left ttbox" style="text-align: left">
+          <h3 class="title2" style="line-height: 0.8; font-size: 5vw">
+            BUILDS
+          </h3>
+          <p>
+            We're launching four distinct smart contracts to house our diverse
+            ERC721 NFT collection, each customized for a specific Shadawi build,
+            to ensure every one operates with its distinct functionality
+          </p>
+        </div>
+
+        <div class="content__right">
+          <div class="card-container">
+            <div class="card"> <!-- CARD-->
+              <img src="./images/evoIcon.png" alt="">
+              <div class="card-micro-info">
+                <h4 class="title2" style="font-size: 3vw;">EVO</h4>
+                <p>Mint a specimen watch it evolve over time.</p>
+              </div>
+            </div>
+            <div class="card"> <!-- CARD-->
+              <img src="./images/evoIcon.png" alt="">
+              <div class="card-micro-info">
+                <h4 class="title2" style="font-size: 3vw;">EVO</h4>
+                <p">Mint a specimen watch it evolve over time.</p>
+              </div>
+            </div>
+            <div class="card"> <!-- CARD-->
+              <img src="./images/evoIcon.png" alt="">
+              <div class="card-micro-info">
+                <h4 class="title2" style="font-size: 3vw;">EVO</h4>
+                <p>Mint a specimen watch it evolve over time.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gem-section">
+      <div id="gem-canvas-container">
+        <canvas id="gem-canvas"></canvas>
+      </div>
+
+      <div class="scrolling-content">
+        <div class="gems-title">
+          <h1 class="title1">
+            <span class="glet">G</span>
+            <span class="glet">E</span>
+            <span class="glet">M</span>
+            <span class="glet">S</span>
+          </h1>
+        </div>
+        <section class="section">
+          <h2>My Portfolio</h2>
+        </section>
+        <section class="section">
+          <h2>My projects</h2>
+        </section>
+        <section class="section">
+          <h2>Contact me</h2>
+        </section>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footer" class="section-block">
+      <p>this is the website hero</p>
+      <h3>CREATORS</h3>
+      <img src="./images/cr.png" alt="" style="width: 30%" />
+
+      <hr />
+      <p>Shadawi® All right reserved 2024</p>
+      <div class="footer-links">
+        <div>
+          <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
+        </div>
+
+        <div class="social-icons">
+          <img src="./images/patreon-logo.png" alt="patreon" />
+          <img src="./images/patreon-logo.png" alt="patreon" />
+          <img src="./images/patreon-logo.png" alt="patreon" />
+        </div>
+
+        <div>
+          <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <!-- J A V A S C R I P T -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="./js/initGems.js"></script>
+  </body>
+
+  <!-- JAVASCRIPT -->
+</html>
