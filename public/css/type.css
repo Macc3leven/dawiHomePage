@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+h1,
+h2,
+h3,
+h4,
+p,
+a {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Audiowide", sans-serif;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.neo1 {
+  background: linear-gradient(90deg, #ff6e7f, #ff6e7f, #8000ff7e, #70ddff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.neo2 {
+  background-image: url("../images/2.jpg");
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Basic text box has Title, readable text */
+.basicTextBox {
+  position: relative;
+  line-height: 0.8;
+  padding: 25vh 16px;
+  max-width: 100%;
+  text-align: left;
+  align-items: center;
+  background-color: #3b3355;
+}
+.basicTextBox > h1, h2 {
+  width: min-content;
+  background-color: #c3c3e6;
+}
+.basicTextBox > p {
+  margin: 10px 0px;
+  width: 39vh;
+  max-width: 100%;
+  line-height: normal;
+  background-color: #585858;
+}
+
+.basicTextBox > div {
+  margin: 10px 0px;
+  width: 39vh;
+  max-width: 100%;
+  line-height: normal;
+  background-color: #585858;
+}
+
+
+h1 {
+  /*Main Title*/
+  font-family: "Bungee", sans-serif;
+  max-width: min-content;
+  font-size: 8vw;
+  font-weight: 400;
+  line-height: 0.2;
+}
+
+h2 {
+  /*Sub Title*/
+  font-family: "Audiowide", sans-serif;
+  max-width: min-content;
+  font-size: 8vw;
+  font-weight: 400;
+}
+h3 {
+  /* Misc Title, attention grab */
+  font-family: "Bungee", sans-serif;
+  max-width: min-content;
+  font-size: 24px;
+  font-weight: 200;
+}
+h4 {
+  /* External links */
+  font-family: "Bungee", sans-serif;
+  font-size: 14px;
+}
+p {
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  line-height: 1;
+}
+a {
+  font-family: "Audiowide", sans-serif;
+  font-size: 14px;
+}
+a:hover {
+  color: #c3c3e6;
+  text-shadow: 0 0 10px #9403e8, 0 0 20px #9403e8,
+    /* Outer Glow */ 0 0 30px #7cdaff; /* Lowkey Glow */
+}
+p{
+  font-size: 20px;
+
+}
+
+/* ANIMATIONS */
+.rising-text {
+  animation-name: riseUp; /* Reference the defined keyframes */
+  /* animation-timeline: view(); */
+  animation-duration: 1.5s; /* Duration of the animation */
+  animation-fill-mode: forwards; /* Ensures that the text stays in the end state */
+  animation-timing-function: ease-out; /* Speed curve of the animation */
+}
+
+.rising-text-scroll {
+  animation-name: riseUp; /* Reference the defined keyframes */
+  animation-timeline: view();
+  animation-range: exit -200px;
+  animation-fill-mode: forwards; /* Ensures that the text stays in the end state */
+  animation-timing-function: ease-out; /* Speed curve of the animation */
+}
+
+.vanish-section {
+  animation: vanish linear forwards;
+  animation-timeline: view(250px 10px);
+  /* animation-range: exit -200px; */
+  /* animation-timing-function: ease-out;  Speed curve of the animation */
+}
+
+@keyframes vanish {
+  from {
+    opacity: 1; /* End with the text being fully opaque */
+    /* background-color: #70ddff;
+    color: #ff6e7f; */
+  }
+  to {
+    opacity: 0;
+    scale: 3;
+  }
+}
+
+@keyframes riseUp {
+  from {
+    transform: translateY(
+      20px
+    ); /* Start position: 20px below the final position */
+    opacity: 0; /* Start with the text being fully transparent */
+  }
+  to {
+    transform: translateY(0); /* End position: original position */
+    opacity: 1; /* End with the text being fully opaque */
+  }
+}
+
+/* SCREEN */
+@media screen and (max-width: 500px) {
+  h1,
+  h2 {
+    font-size: 14vw;
+  }
+
+  .basicTextBox {
+    margin: 15vh 16px;
+  }
+}

@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/type.css" />
     <title>Gems 1</title>
   </head>
 
@@ -37,25 +39,21 @@
 
     <!-- HERO -->
     <div id="hero" class="section-block">
-      <div class="title-content" style="text-align: left">
-        <h2 class="title1">
-          <span>JOIN</span> <span>THE</span><br />
+      <div class="basicTextBox">
+        <h2 class="rising-text">
+          <span>JOIN THE</span><br />
           <span class="neo1">GALACTIC</span><br />
           <span>BATTLE</span>
         </h2>
-
-        <p class="infoText1">
+        <p>
           Enter the world of Shadawi - Discover 3D specimens powered by Polygon
           blockchain. Collect, Transform, and Battle, Become the ultimate mage.
         </p>
-
-        <div class="hero-btns-container">
-          <button class="pos-btn">Gallery</button>
-          <button class="neg-btn">Dashboard ></button>
+        <div class="button-pair">
+          <a href="#" class="pos-btn">Gallery</a>
+          <a href="#" class="neg-btn">Dashboard ></a>
         </div>
       </div>
-
-      <div class="abc"><!-- TEST --></div>
     </div>
 
     <!-- SECTION 1 -->
@@ -63,69 +61,56 @@
       <div class="section__content">
         <div class="content__left">
           <!-- Canvas ThreeJs-->
-          <img src="./images/pic1.png" alt="" />
-        </div>
-
-        <div class="content__right ttbox">
-          <h3 class="title1" style="width: min-content; font-size: 3vw">
-            <span>A STORYLINE</span>
-            <span>MADE FOR</span>
-            <span>ADVENTURERS</span>
-          </h3>
-          <p>
-            In a universe molded by ancient powers, the key lies within the
-            grasp of its wielders...
-          </p>
-          <p class="infoText1">
-            Watch Legends Series ->
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- SECTION 2 -->
-    <div class="section-block">
-      <div class="section__content">
-        
-        <div class="content__left ttbox" style="text-align: left">
-          <h3 class="title2" style="line-height: 0.8; font-size: 5vw">
-            BUILDS
-          </h3>
-          <p>
-            We're launching four distinct smart contracts to house our diverse
-            ERC721 NFT collection, each customized for a specific Shadawi build,
-            to ensure every one operates with its distinct functionality
-          </p>
+          <img src="./images/fanImage1.png" alt="" style="max-width: 100%" />
         </div>
 
         <div class="content__right">
-          <div class="card-container">
-            <div class="card"> <!-- CARD-->
-              <img src="./images/evoIcon.png" alt="">
-              <div class="card-micro-info">
-                <h4 class="title2" style="font-size: 3vw;">EVO</h4>
-                <p>Mint a specimen watch it evolve over time.</p>
-              </div>
-            </div>
-            <div class="card"> <!-- CARD-->
-              <img src="./images/evoIcon.png" alt="">
-              <div class="card-micro-info">
-                <h4 class="title2" style="font-size: 3vw;">EVO</h4>
-                <p">Mint a specimen watch it evolve over time.</p>
-              </div>
-            </div>
-            <div class="card"> <!-- CARD-->
-              <img src="./images/evoIcon.png" alt="">
-              <div class="card-micro-info">
-                <h4 class="title2" style="font-size: 3vw;">EVO</h4>
-                <p>Mint a specimen watch it evolve over time.</p>
-              </div>
-            </div>
+          <div class="basicTextBox">
+            <h3>
+              <span>A STORYLINE</span>
+              <span>MADE FOR</span>
+              <span>ADVENTURERS</span>
+            </h3>
+            <p>
+              In a universe molded by ancient powers, the key lies within the
+              grasp of its wielders...
+            </p>
+            <a href="www.patreon.com"> Watch Legends Series > </a>
           </div>
         </div>
       </div>
     </div>
+    <!-- SECTION 2 -->
+    <div class="section-block">
+      <div class="section__content rev">
+        <div class="content__left">
+          <div class="basicTextBox">
+            <h2>BUILDS</h2>
+            <p>
+              We're launching four distinct smart contracts to house our diverse
+              ERC721 NFT collection, each customized for a specific Shadawi
+              build, to ensure every one operates with its distinct
+              functionality
+            </p>
+            <div class="button-pair">
+              <a href="#" class="pos-btn">Mint</a>
+              <a href="#" class="neg-btn">Documentation ></a>
+            </div>
+          </div>
+        </div>
 
+        <div class="content__right">
+          <iframe
+            src="https://my.spline.design/cards12-de41ef3cbcaaa1890eddfb3c6667e11f/"
+            frameborder="0"
+            width="100%"
+            height="100%"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 3 -->
     <div class="gem-section">
       <div id="gem-canvas-container">
         <canvas id="gem-canvas"></canvas>
@@ -133,53 +118,110 @@
 
       <div class="scrolling-content">
         <div class="gems-title">
-          <h1 class="title1">
+          <h1>
             <span class="glet">G</span>
             <span class="glet">E</span>
             <span class="glet">M</span>
             <span class="glet">S</span>
           </h1>
         </div>
-        <section class="section">
-          <h2>My Portfolio</h2>
+        <section class="basicTextBox">
+          <h2>POWER</h2>
+          <p>
+            Gems are powerful artifacts that have the ability to speed up
+            evolution time of specimen.
+          </p>
         </section>
-        <section class="section">
-          <h2>My projects</h2>
+
+        <section class="basicTextBox">
+          <h2>DIVERSE</h2>
+          <p>There is a gem for each classification of Shadawi, Take a look.</p>
+          <!-- <div class="button-pair" id="gem-btn-container">
+            <a href="#" class="gem-btn"
+              ><img src="./images/arrowL.png" alt="previous"
+            /></a>
+            <div>
+              <h4>BEAST</h4>
+              <p>
+                There's a max of 128,000 gems for each class. Once they're gone,
+                gems must be burned in order for mining to continue.
+              </p>
+            </div>
+            <a href="#" class="gem-btn"
+              ><img src="./images/arrowR.png" alt="next"
+            /></a>
+          </div> -->
         </section>
-        <section class="section">
-          <h2>Contact me</h2>
+
+        <section class="basicTextBox">
+          <h2>LIMITED</h2>
+          <p>
+            There's a max of 128,000 gems for each class. Once they're gone,
+            gems must be burned in order for mining to continue.
+          </p>
+          <div class="button-pair">
+            <a href="#" class="pos-btn">Mint Gems</a>
+            <a href="#" class="neg-btn">Documentation ></a>
+          </div>
         </section>
+        <br /><br />
       </div>
     </div>
 
+    <!-- SECTION 4 -->
+
     <!-- FOOTER -->
     <div id="footer" class="section-block">
-      <p>this is the website hero</p>
-      <h3>CREATORS</h3>
-      <img src="./images/cr.png" alt="" style="width: 30%" />
+      <div class="footer-top-section">
+        <!-- <div class="footer-scene-container"> -->
+        <!-- <h2>CREATORS</h2> -->
+        <img src="./images/cr.png" alt="" style="width: 30%" />
+        <!-- <canvas id="footer-canvas"></canvas> -->
+        <!-- </div> -->
 
-      <hr />
-      <p>Shadawi® All right reserved 2024</p>
-      <div class="footer-links">
-        <div>
+        <section class="basicTextBox" style="margin-top: 5vh">
+          <p>
+            Our diverse team of innovative artists and developers brings Shadawi
+            Universe to life. Merging artistic brilliance with blockchain
+            expertise, they craft unique virtual entities and immersive
+            metaverse experiences. Committed to harnessing the power of NFTs and
+            promoting global connectivity and diversity, they deliver a
+            seamless, secure, and engaging gaming journey.
+          </p>
+          <div class="button-pair">
+            <a href="#">Creators ></a>
+          </div>
+        </section>
+      </div>
+
+      <div class="footer-end">
+        <br />
+        <br />
+        <hr style="max-width: 80%" />
+        <div class="footer-links">
+          <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
+          <div class="social-icons">
+            <a href="/"
+              ><img src="./images/patreon-logo.png" alt="patreon"
+            /></a>
+            <a href="/"
+              ><img src="./images/patreon-logo.png" alt="patreon"
+            /></a>
+            <a href="/"
+              ><img src="./images/patreon-logo.png" alt="patreon"
+            /></a>
+          </div>
           <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
         </div>
-
-        <div class="social-icons">
-          <img src="./images/patreon-logo.png" alt="patreon" />
-          <img src="./images/patreon-logo.png" alt="patreon" />
-          <img src="./images/patreon-logo.png" alt="patreon" />
-        </div>
-
-        <div>
-          <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
-        </div>
+        <p>Shadawi® All rights reserved 2024</p>
       </div>
     </div>
 
     <!-- J A V A S C R I P T -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="./js/initGems.js"></script>
+    <script type="module" src="./js/initCreators.js"></script>
+    <script></script>
   </body>
 
   <!-- JAVASCRIPT -->

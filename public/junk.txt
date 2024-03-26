@@ -1,0 +1,28 @@
+// CARD CONTAINER
+
+<div class="card-container">
+            <div class="card">
+              <!-- CARD-->
+              <img src="./images/evoIcon.png" alt="" />
+              <div class="card-micro-info">
+                <h4 class="title2" style="font-size: 3vw">EVO</h4>
+                <p>Mint a specimen watch it evolve over time.</p>
+              </div>
+            </div>
+            <div class="card">
+              <!-- CARD-->
+              <img src="./images/evoIcon.png" alt="" />
+              <div class="card-micro-info">
+                <h4 class="title2" style="font-size: 3vw">EVO</h4>
+                <p>Mint a specimen watch it evolve over time.</p>
+              </div>
+            </div>
+            <div class="card">
+              <!-- CARD-->
+              <img src="./images/evoIcon.png" alt="" />
+              <div class="card-micro-info">
+                <h4 class="title2" style="font-size: 3vw">EVO</h4>
+                <p>Mint a specimen watch it evolve over time.</p>
+              </div>
+            </div>
+          </div>
