@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./css/specimen.css" />
+    <link rel="stylesheet" href="./css/scrollbar.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <title>Specimen #000</title>
+  <style>
+    .nav-container{
+      position: absolute;
+      right: 0px;
+      background-color: rgba(179, 179, 179, 0);
+    }
+
+    .nav-container > a {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      padding: 16px;
+      padding-right: 16px;
+      gap: 5px;
+      color: white;
+
+      text-decoration: none;
+      font-family: "Righteous", sans-serif;
+    }
+
+    .nav-container > a >img{
+      width: 20px;
+    }
+ 
+  </style>
+
+  <body>
+    <!-- Sidebar -->
+    <!-- This sidebar opens from the side if desktop is greater that 600px width, and opens from the bottom on devices less that 600px width, the X is supposed to stay 
+          beside the sidebar at all times, and on mobile stay above it, -->
+
+    <div class="nav-container">
+      <a href="https://www.shadawi.com/gallery"><img src="./images/gallery.png" alt="">Gallery</a>
+    </div>
+
+    <div id="loader">
+      <img src="./images/loader.gif" alt="" />
+      <p id="loaderTxt"></p>
+    </div>
+
+    <a
+      id="toggleBarBtn"
+      href="javascript:void(0)"
+      class="close-btn"
+      onclick="toggleSidebar()"
+      >X</a
+    >
+
+    <!-- Page Content -->
+    <div class="content" id="main-content"></div>
+
+    <div class="sidebar" id="mySidebar">
+      <div class="title-section">
+        <img id="mugshotImg" src=" " alt="" />
+        <div class="title-info">
+          <div class="title-details row">
+            <h1 id="nameTxt"></h1>
+          </div>
+
+          <div class="title-details">
+            <!-- <h4 id="formTxt">Form: 1 of 1</h4> -->
+            <h4 id="sidTxt">SID: #101</h4>
+          </div>
+        </div>
+      </div>
+
+      <br />
+      <div class="info_sections">
+        <div class="info_title" style="text-align: center">Description</div>
+        <div class="info_content" style="text-align: center">
+          <p id="descriptionTxt">Description...</p>
+        </div>
+      </div>
+
+      <br />
+      <!-- Switch form Go here -->
+      <div class="info_sections" id="formDiv">
+        <!-- <div class="info_title" style="text-align: center">Form</div> -->
+        <div class="info_content row">
+          <div id="formBack"><img src="./images/leftPg.png" alt="back" /></div>
+          <p id="formTxt"></p>
+          <div id="formNext"><img src="./images/rightPg.png" alt="next" /></div>
+        </div>
+      </div>
+
+      <!-- Switch form Go here -->
+      <br />
+      <div class="info_sections">
+        <div class="info_title">Attributes</div>
+        <div class="info_content wrap">
+          <div class="attrib row">
+            <h3>Class</h3>
+            <p id="classTxt">class</p>
+          </div>
+          <div class="attrib row">
+            <h3>Skill</h3>
+            <p id="skillTxt">skill</p>
+          </div>
+          <div class="attrib row">
+            <h3>Build</h3>
+            <p id="buildTxt">build</p>
+          </div>
+          <div class="attrib row">
+            <h3>Purg Lvl</h3>
+            <p id="purgTxt">purglvl</p>
+          </div>
+        </div>
+      </div>
+
+      <br />
+      <div class="info_sections">
+        <div class="info_title">Stats</div>
+        <div class="info_content wrap">
+          <div class="stat row">
+            <h3>ATK</h3>
+            <p id="damageTxt">100</p>
+          </div>
+          <div class="stat row">
+            <h3>DEF</h3>
+            <p id="defenseTxt">100</p>
+          </div>
+          <div class="stat row">
+            <h3>CYCLE TIME</h3>
+            <p id="timeTxt">100</p>
+          </div>
+          <div class="stat row">
+            <h3>STUN</h3>
+            <p id="stunTxt">100</p>
+          </div>
+          <div class="stat row">
+            <h3>AGILITY</h3>
+            <p id="agilityTxt">100</p>
+          </div>
+          <div class="stat row">
+            <h3>POWER</h3>
+            <p id="powerTxt">100</p>
+          </div>
+        </div>
+      </div>
+
+      <br />
+      <div class="info_sections">
+        <div class="info_title">Abilities</div>
+        <div id="abilityCont" class="info_content wrap">
+          <!-- Populate with js  -->
+        </div>
+      </div>
+
+      <br />
+      <div class="social-section">
+        <div class="info_title">Follow Our Project</div>
+        <div class="social-content row">
+          <a href="https://www.facebook.com/LegendsOfShadawi/"
+            ><img src="./images/facebook.png" alt="" />
+          </a>
+          <a href="https://twitter.com/shadawi_nft"
+            ><img src="./images/x.png" alt="" />
+          </a>
+          <a href="https://www.instagram.com/shadawi_nft/"
+            ><img src="./images/instagram.png" alt="" />
+          </a>
+          <a href="https://discord.gg/nb9GFfPnnW"
+            ><img src="./images/discord.png" alt="" />
+          </a>
+        </div>
+        <br />
+      </div>
+    </div>
+
+    <!-- IMPORT MAP -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://threejs.org/build/three.module.js",
+          "three/addons/": "https://threejs.org/examples/jsm/"
+        }
+      }
+    </script>
+
+    <!-- JAVASCRIPT DOM -->
+    <script>
+      var isSidebarOpen = false;
+      isSidebarOpen ? null : toggleSidebar();
+
+      var playAnim = null;
+
+      const imagesFolder = "./images";
+      const syncFunctions = {};
+
+      // Function to handle the open and close of toggle.
+      function toggleSidebar() {
+        var sidebar = document.getElementById("mySidebar");
+        var toggleBar = document.getElementById("toggleBarBtn");
+        var toggleBarBtn = document.getElementById("toggleBarBtn");
+        var isMobile = window.innerWidth <= 600;
+
+        if (isSidebarOpen) {
+          // close
+          toggleBarBtn.textContent = ">";
+          sidebar.style.height = isMobile ? "0" : "100%";
+          sidebar.style.width = isMobile ? "100%" : "0";
+
+          isMobile
+            ? (toggleBar.style.marginBottom = "0")
+            : (toggleBar.style.marginLeft = "0");
+        } else {
+          //open
+          toggleBarBtn.textContent = "X";
+          sidebar.style.height = isMobile ? "40%" : "100%";
+          sidebar.style.width = isMobile ? "100%" : "38%";
+
+          isMobile
+            ? (toggleBar.style.marginBottom = "40vh")
+            : (toggleBar.style.marginLeft = "38vw");
+        }
+
+        isSidebarOpen = !isSidebarOpen;
+      }
+
+      function toggleLoader(toggleOn, msg) {
+        const loaderDiv = document.getElementById("loader");
+        if (toggleOn) {
+          // turn on
+          loaderDiv.style.display = "block";
+        } else loaderDiv.style.display = "none"; // turn off
+
+        loaderMsg(msg || "Loading");
+      }
+
+      function loaderMsg(msg = "") {
+        const loaderTxt = document.getElementById("loaderTxt");
+        loaderTxt.textContent = msg;
+      }
+
+      function toggleFormBtns(left, right) {
+        document.getElementById("formBack").style.display = left
+          ? "block"
+          : "none";
+        document.getElementById("formNext").style.display = right
+          ? "block"
+          : "none";
+      }
+
+      function setLoopAnim() {}
+
+      function createAbilityButton(displayName, mods = {}) {
+        const abilityContainer = document.getElementById("abilityCont");
+
+        // Create the outer div
+        const abilDiv = document.createElement("div");
+        abilDiv.className = "abil col";
+
+        // Create and append the h2 element
+        const h2 = document.createElement("h2");
+        h2.textContent = displayName;
+        abilDiv.appendChild(h2);
+
+        // Create the wrapper div for abil_details
+        const wrapDiv = document.createElement("div");
+        wrapDiv.className = "row wrap";
+        abilDiv.appendChild(wrapDiv);
+
+        for (modType in mods) {
+          const modValue = Number(mods[modType]).toFixed(1);
+
+          const abilDetailDiv = document.createElement("div");
+          abilDetailDiv.className = "abil_detail row";
+
+          const img = document.createElement("img");
+          img.src = `${imagesFolder}/${modType}.png`;
+          img.alt = `${modType} icon symbol`;
+          abilDetailDiv.appendChild(img);
+
+          const p1 = document.createElement("p");
+          p1.textContent = String(modType).toUpperCase();
+          abilDetailDiv.appendChild(p1);
+
+          const p2 = document.createElement("p");
+          p2.textContent = String(modValue);
+          modValue < 1
+            ? (p2.style.color = "#de6969")
+            : (p2.style.color = "#69de69");
+          abilDetailDiv.appendChild(p2);
+          wrapDiv.appendChild(abilDetailDiv);
+        }
+
+        abilityContainer.appendChild(abilDiv);
+        return abilDiv;
+      }
+
+
+      function populateSpecimen(specimenObject, currentFormIndex = 0, mugshot) {
+        const { SID, description, forms } = specimenObject;
+        const form = forms[currentFormIndex];
+
+        // SID
+        document.getElementById("sidTxt").textContent = `SID: #${SID}`;
+        forms.length == 1 ? toggleFormBtns(false, false) : null;
+
+        // Info in specimen
+        for (key in specimenObject) {
+          const idName = key + "Txt";
+          const element = document.getElementById(idName);
+          if (element) {
+            element.textContent = specimenObject[key];
+          }
+        }
+
+        // info in form
+        for (key in form) {
+          const idName = key + "Txt";
+          const element = document.getElementById(idName);
+          if (!form[key]) continue;
+          if (element) {
+            element.textContent = form[key];
+          }
+        }
+
+        // shrink description txt
+        document.getElementById("descriptionTxt").textContent.length > 95
+          ? (document.getElementById("descriptionTxt").style.fontSize =
+              "x-small")
+          : null;
+
+        //add form text
+        document.getElementById("formTxt").textContent = `Form: ${
+          currentFormIndex + 1
+        } of ${forms.length}`;
+        document.getElementById("mugshotImg").src = mugshot;
+      }
+
+      function populateAbilities(abilityPack = [], animationFunction) {
+        abilityPack.forEach((anim) => {
+          if (anim) {
+            const { dataname, mods, name, status } = anim;
+            const div = createAbilityButton(name, mods);
+
+            div.addEventListener("click", (e) => {
+              e.preventDefault();
+              animationFunction(dataname, status);
+            });
+          }
+        });
+      }
+
+      function clearAbilities(){
+        const abilityContainer = document.getElementById("abilityCont");
+        abilityContainer.innerHTML = "";
+      }
+
+
+    </script>
+
+    <!-- JAVASCRIPT THREEJS -->
+    <script type="module" src="./js/threeEngine/threeEngine.js"></script>
+    <script type="module">
+      import threeEng from "./js/threeEngine/threeEngine.js";
+      import baseSpecTerrain from "./js/misc/baseSpecTerrain.js";
+      import keyboard from "./js/misc/keyboard.js";
+      import loadSpecData from "./js/misc/loadSpecimen.js";
+      import * as content from "./js/contentFetch.js";
+      import Specimen from "./js/specimen.js";
+
+      // variables
+      const prefabName = "specimen";
+      const gateway = "https://beige-worthwhile-hornet-694.mypinata.cloud/ipfs/";
+      const baseAnims = ["run", "idle", "jump", "faint"];
+      var maxForm = 0;
+      var currentFormIndex = 0;
+      var currentSkinIndex = 0;
+      var relop = 0;
+
+      // Specimen Info
+      const specJson = await content.getSpecimenIpfs();
+      const SPECIMEN = new Specimen(specJson, gateway);
+
+      // Setup Engine
+      const Engine = new threeEng();
+      Engine.init();
+
+      // load specimen from external source
+      async function init(_specimenJsonLink) {
+
+        // populate dom
+        populateSpecimen(
+          SPECIMEN.specimenDoc,
+          SPECIMEN.currentFormIndex,
+          SPECIMEN.formMugshot() // gets link
+        );
+
+        // add terrain
+        const terrain = await SPECIMEN.getTerrain();
+        console.log({terrain});
+        toggleLoader(true, "loading terrain...");
+        await Engine.Terrain.setTerrain(terrain);
+
+        // add model
+        const prefabUrl = SPECIMEN.formPrefab();
+        toggleLoader(true, "loading specimen...");
+        await Engine.Prefab.addModel(prefabName, prefabUrl);
+
+        // After model has loaded
+        toggleLoader(false); //Remove loading tag
+
+        // Organize camera
+        const _prefab = Engine.Prefab._getPrefabData(prefabName).scene;
+        const height = Engine.Prefab.getPrefabHeight(_prefab);
+        Engine.setCameraPosition(0, height+1, 10);
+
+        // Add Animations & buttons
+        const abilityList = SPECIMEN.formAbilities();
+        var animList = Engine.Actions.listAnims(prefabName)
+          .filter((name) => baseAnims.includes(name)) // First, filter out names not in baseAnims
+          .map((name) => ({ dataname: name, name })); // Then, map over the filtered list
+
+        animList = [...animList, ...abilityList];
+
+        populateAbilities(animList, (abilityName, isAbility) => {
+          if (isAbility) { Engine.Actions.playAbility(prefabName, abilityName);
+          } else Engine.Actions.playAnim(prefabName, abilityName);
+        });
+
+        // edit lighting
+        const light1 =
+          Engine.Terrain._getTerrainData("DirectionalLight0").prefab;
+        keyboard(light1);
+
+        //set from
+        function deleteScene() {
+          clearAbilities();
+          Engine.Prefab._hardReset();
+          Engine.Terrain._hardReset();
+        }
+
+        syncFunctions.nextForm = () => {
+          if (currentFormIndex + 1 == maxForm) return;
+          currentFormIndex++;
+          deleteScene();
+          init();
+        };
+
+        syncFunctions.prevFrom = () => {
+          if (currentFormIndex < 1) return;
+          currentFormIndex--;
+          deleteScene();
+
+          init();
+        };
+
+        // if(relop<1){
+        // setTimeout(deleteScene,5000);
+        // setTimeout(init, 9000);
+
+        // // clear specimen
+
+        // relop++;
+        // }
+        
+        // modifyTimeScale = function (speed) {
+        //     mixer.timeScale = speed;
+        // };
+
+        // checkbox.addEventListener("change", function () {
+        //     loopAnim.status = this.checked;
+
+        //     if (loopAnim.anim) {
+        //         clearInterval(loopAnim.anim);
+        //         console.log("ending loop");
+        //     }
+        // }); */
+      }
+      init();
+    </script>
+  </body>
+</html>

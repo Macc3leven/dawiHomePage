@@ -1,62 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Particle Explosion in Three.js</title>
     <style>
-        body { margin: 0; }
-        canvas { display: block; }
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: rgb(52, 52, 59);
+      }
+      canvas {
+        display: block;
+        width: 100%;
+        height: 100vh;
+        background-color: aqua;
+      }
     </style>
-</head>
-<body>
-<script src="https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.min.js"></script>
-<script>
-    let scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x000000);
-    let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    let renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
-
-    let particleGeometry = new THREE.BufferGeometry();
-    let particleCount = 400;
-    let posArray = new Float32Array(particleCount * 3); // Position array
-    let velocityArray = []; // Velocity array for particles
-
-    for (let i = 0; i < particleCount; i++) {
-        posArray[i * 3] = 0; // x
-        posArray[i * 3 + 1] = 0; // y
-        posArray[i * 3 + 2] = 0; // z
-        // Assign random velocities
-        velocityArray.push({
-            x: (Math.random() - 0.5) * 0.1,
-            y: (Math.random() - 0.5) * 0.1,
-            z: (Math.random() - 0.5) * 0.1
-        });
-    }
-
-    particleGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-    let particleMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 0.05 });
-    let particles = new THREE.Points(particleGeometry, particleMaterial);
-    scene.add(particles);
-
-    camera.position.z = 5;
-
-    function animate() {
-        requestAnimationFrame(animate);
-
-        let positions = particleGeometry.attributes.position.array;
-        for (let i = 0; i < particleCount; i++) {
-            positions[i * 3] += velocityArray[i].x;
-            positions[i * 3 + 1] += velocityArray[i].y;
-            positions[i * 3 + 2] += velocityArray[i].z;
+  </head>
+  <body>
+    <canvas id="footer-canvas"> </canvas>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://threejs.org/build/three.module.js",
+          "three/addons/": "https://threejs.org/examples/jsm/"
         }
-        particleGeometry.attributes.position.needsUpdate = true;
-
-        renderer.render(scene, camera);
-    }
-
-    animate();
-</script>
-</body>
+      }
+    </script>
+    <script type="module" src="./js/initCreators.js"></script>
+    <script></script>
+  </body>
 </html>

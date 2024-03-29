@@ -27,37 +27,6 @@ a {
   color: transparent;
 }
 
-/* Basic text box has Title, readable text */
-.basicTextBox {
-  position: relative;
-  line-height: 0.8;
-  padding: 25vh 16px;
-  max-width: 100%;
-  text-align: left;
-  align-items: center;
-  background-color: #3b3355;
-}
-.basicTextBox > h1, h2 {
-  width: min-content;
-  background-color: #c3c3e6;
-}
-.basicTextBox > p {
-  margin: 10px 0px;
-  width: 39vh;
-  max-width: 100%;
-  line-height: normal;
-  background-color: #585858;
-}
-
-.basicTextBox > div {
-  margin: 10px 0px;
-  width: 39vh;
-  max-width: 100%;
-  line-height: normal;
-  background-color: #585858;
-}
-
-
 h1 {
   /*Main Title*/
   font-family: "Bungee", sans-serif;
@@ -100,58 +69,8 @@ a:hover {
   text-shadow: 0 0 10px #9403e8, 0 0 20px #9403e8,
     /* Outer Glow */ 0 0 30px #7cdaff; /* Lowkey Glow */
 }
-p{
+p {
   font-size: 20px;
-
-}
-
-/* ANIMATIONS */
-.rising-text {
-  animation-name: riseUp; /* Reference the defined keyframes */
-  /* animation-timeline: view(); */
-  animation-duration: 1.5s; /* Duration of the animation */
-  animation-fill-mode: forwards; /* Ensures that the text stays in the end state */
-  animation-timing-function: ease-out; /* Speed curve of the animation */
-}
-
-.rising-text-scroll {
-  animation-name: riseUp; /* Reference the defined keyframes */
-  animation-timeline: view();
-  animation-range: exit -200px;
-  animation-fill-mode: forwards; /* Ensures that the text stays in the end state */
-  animation-timing-function: ease-out; /* Speed curve of the animation */
-}
-
-.vanish-section {
-  animation: vanish linear forwards;
-  animation-timeline: view(250px 10px);
-  /* animation-range: exit -200px; */
-  /* animation-timing-function: ease-out;  Speed curve of the animation */
-}
-
-@keyframes vanish {
-  from {
-    opacity: 1; /* End with the text being fully opaque */
-    /* background-color: #70ddff;
-    color: #ff6e7f; */
-  }
-  to {
-    opacity: 0;
-    scale: 3;
-  }
-}
-
-@keyframes riseUp {
-  from {
-    transform: translateY(
-      20px
-    ); /* Start position: 20px below the final position */
-    opacity: 0; /* Start with the text being fully transparent */
-  }
-  to {
-    transform: translateY(0); /* End position: original position */
-    opacity: 1; /* End with the text being fully opaque */
-  }
 }
 
 /* SCREEN */
@@ -159,9 +78,5 @@ p{
   h1,
   h2 {
     font-size: 14vw;
-  }
-
-  .basicTextBox {
-    margin: 15vh 16px;
   }
 }

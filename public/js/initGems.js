@@ -1,3 +1,4 @@
+import { THREE } from "./threeWrapper.js";
 var scene, camera, renderer, cube;
 
 /** This is the script for gems 

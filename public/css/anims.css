@@ -1,0 +1,63 @@
+.rising-text {
+  animation-name: riseUp; /* Reference the defined keyframes */
+  /* animation-timeline: view(); */
+  animation-duration: 1.5s; /* Duration of the animation */
+  animation-fill-mode: forwards; /* Ensures that the text stays in the end state */
+  animation-timing-function: ease-out; /* Speed curve of the animation */
+}
+
+.rising-text-scroll {
+  animation-name: riseUp; /* Reference the defined keyframes */
+  animation-timeline: view();
+  animation-range: exit -200px;
+  animation-fill-mode: forwards; /* Ensures that the text stays in the end state */
+  animation-timing-function: ease-out; /* Speed curve of the animation */
+}
+
+.vanish-section {
+  animation: vanish linear forwards;
+  animation-timeline: view(250px 10px);
+}
+
+.glet {
+  animation: spinInFromLeft linear forwards;
+  /* animation-timeline: view(50vh 0px); */
+  animation-timeline: view(50vh 0px);
+}
+
+/* ANIMATIONS */
+@keyframes spinInFromLeft {
+  from {
+    transform: rotateZ(90deg);
+    opacity: 1;
+  }
+  to {
+    transform: rotateZ(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes vanish {
+  from {
+    opacity: 1; /* End with the text being fully opaque */
+    /* background-color: #70ddff;
+    color: #ff6e7f; */
+  }
+  to {
+    opacity: 0;
+    scale: 3;
+  }
+}
+
+@keyframes riseUp {
+  from {
+    transform: translateY(
+      20px
+    ); /* Start position: 20px below the final position */
+    opacity: 0; /* Start with the text being fully transparent */
+  }
+  to {
+    transform: translateY(0); /* End position: original position */
+    opacity: 1; /* End with the text being fully opaque */
+  }
+}

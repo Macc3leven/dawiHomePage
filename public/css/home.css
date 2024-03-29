@@ -8,7 +8,8 @@
 
 /* BODY */
 html {
-  background: #676767;
+  /* background: #1a1a1a; */
+  background: linear-gradient(90deg, #de6969, #de6969b2, #3b33555c);
 }
 
 body {
@@ -22,39 +23,58 @@ body {
   overflow-x: hidden;
 }
 
+/* TEXT BOX CONTAINER */
 .basicTextBox {
   position: relative;
+  line-height: 0.8;
+  padding: 25vh 16px;
+  max-width: 100%;
+  text-align: left;
+  align-items: center;
+}
+.basicTextBox > h1,
+.basicTextBox > h2 {
+  width: min-content;
+}
+.basicTextBox > p {
+  margin: 10px 0px;
+  width: 39vh;
+  max-width: 100%;
+  line-height: normal;
+}
+.basicTextBox > div {
+  position: relative;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 /* BUTTONS */
 .button-pair {
-  position: relative;
   display: flex;
-  flex-wrap: wrap;
-  position: absolute;
-  /* width: max-content; */
-  max-width: 100%;
-  background-color: #70ddff;
-  /* justify-content: space-between; */
-  /* padding: 10px 0px; */
+  /* font-size: xx-large; */
 }
 
 .button-pair > a,
 .button-pair > button {
-  min-width: max-content;
+  display: flex;
+  gap: 4px;
+  width: max-content;
+  border: #000000 none;
+  padding: 20px 40px;
+  border-radius: 4px;
+  font-size: 19px;
+  align-items: center;
 }
 
 .pos-btn {
-  padding: 10px 40px;
-  border: #000000 none;
-  border-radius: 24px;
-  background: linear-gradient(90deg, #de6969, #de6969b2, #3b33555c);
+  /* background: linear-gradient(90deg, #de6969, #de6969b2, #3b33555c); */
+  background-image: url("../images/bubbles.png");
+  background-size: cover; /* Scale the background image to cover the element */
+  background-position: center; /* Center the background image */
 }
 
 .neg-btn {
-  padding: 10px 40px;
-  border: #000000 none;
-  border-radius: 24px;
   background: none;
 }
 
@@ -64,6 +84,11 @@ body {
   border: 2px solid #c3c3e6;
   text-shadow: 0 0 10px #9403e8, 0 0 20px #9403e8,
     /* Outer Glow */ 0 0 30px #7cdaff; /* Lowkey Glow */
+}
+
+.button-pair > a >img{
+  width: 34px; 
+  height: 34px; 
 }
 
 /* NAVBAR */
@@ -100,7 +125,7 @@ body {
   display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 16px; /* Padding for spacing */
+  padding: 14px 16px;
   text-decoration: none;
 }
 
@@ -114,6 +139,7 @@ body {
 #hero {
   background-image: url("../images/site_2.png");
   background-position: center;
+  /* padding-top: 200px; */
 }
 
 /* SECTIONS */
@@ -131,7 +157,6 @@ body {
   position: relative;
   display: flex;
   text-align: left;
-  background-color: #764646;
 }
 
 .content__left,
@@ -141,11 +166,10 @@ body {
 }
 
 .content__left {
-  background-color: #7f00ff;
+  /* background-color: #7f00ff; */
 }
 
 .content__right {
-  background-color: #70ddff;
 }
 
 /* BUILDS */
@@ -170,7 +194,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-  /* background-color: #3d05055b; */
+  /* background-color: #83f73a; */
 }
 
 #gem-canvas-container > canvas {
@@ -183,7 +207,6 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-  background-color: #3d05055b;
 }
 
 .scrolling-content {
@@ -197,6 +220,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  gap: 300px;
   /* background-color: #98fb98; */
 }
 
@@ -222,113 +246,90 @@ section:nth-child(odd) {
   gap: 10vh;
 }
 
-#gem-btn-container {
-  position: relative;
-  width: 80vw;
-  background-color: #7f00ff;
-  align-items: center;
+.gem-btn-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 499px;
+  gap: 20vw;
+
+  background-color: #9403e8;
 }
 
-.gem-btn {
-  padding: 20px;
+.gem-btn-container > div{
+  padding: 0px 16px;
+  cursor: pointer; 
+}
+
+.gem-btn-container > div > img{
+  max-width: 100%;
 }
 
 .gem-btn > img {
-  max-width: 15vw;
-  background-color: #de6969;
-}
-
-.glet {
-  animation: spinInFromLeft linear;
-  animation-timeline: view(50vh 0px);
-  /* animation-range-start: 500px;
-  animation-range-start: 700px; */
+  max-width: 12vw;
+  /* background-color: #de6969; */
 }
 
 /* FOOTER */
 #footer {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  height: 100%;
+
   border-top-left-radius: 28px;
   border-top-right-radius: 28px;
   text-align: center;
   overflow: hidden;
   z-index: 10;
-  background-color: #1a1a1a;
+  background: linear-gradient(60deg, #1a1a1a, #222222, #3b3355);
 }
-
-.footer-top-section {
-  /* min-height: 50vh; */
-  background-color: #58235d;
-}
-
-.footer-top-section > section {
-  /* position: absolute; */
-  /* top: 0px; */
-  /* background-color: #462929; */
-}
-
-.footer-scene-container {
-  position: relative;
+#footer > section{
   width: 100%;
-  height: 40vh;
-  background-color: #764646;
 }
-
-.footer-scene-container > canvas {
-  position: relative;
-  /* background-color: #70ddff; */
-  z-index: 1;
-  width: 350px;
-  height: 350px;
+#footer-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
-
 .footer-end {
-  padding-bottom: 4px;
-}
-
-.footer-links {
-  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  bottom: 0px;
 }
-
 .social-icons {
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+}
+.footer-links {
+  display: flex;
   flex-direction: row;
-  padding: 0px 20px;
   align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.logo-mark {
+  max-width: 100px;
+  margin: 10px;
 }
 
-.social-icons > a {
-  align-items: center;
-}
 
-.social-icons > a > img {
-  /* background-color: #ff70ba; */
-  width: 45px;
-  height: 45px;
-  padding: 0px 5vw;
-}
-
-/* ANIMATIONS */
-@keyframes spinInFromLeft {
-  from {
-    transform: rotateZ(90deg);
-    opacity: 1;
-  }
-  to {
-    transform: rotateZ(0deg);
-    opacity: 1;
-  }
-}
 
 /* MOBILE */
 @media screen and (max-width: 500px) {
+  
+  /* NAVBAR */
   .navbar__mobile {
     display: flex;
   }
@@ -336,18 +337,27 @@ section:nth-child(odd) {
     display: none;
   }
 
+  /* SECTIONS */
+  #hero > .basicTextBox{
+    padding-top: 30vh;
+  }
   .section__content {
     flex-direction: column;
-    /* width: 100%; */
   }
-
   .content__left,
   .content__right {
     min-width: 100%;
   }
 
-  .ttbox {
-    padding-top: 10vh;
+  /* BUTTONS */
+  .button-pair{
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* TEXT BOX */
+  .basicTextBox {
+    padding: 10vh 16px;
   }
 }
 

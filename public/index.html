@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" href="./css/home.css" />
     <link rel="stylesheet" href="./css/type.css" />
+    <link rel="stylesheet" href="./css/anims.css" />
     <title>Gems 1</title>
   </head>
 
@@ -24,7 +25,7 @@
 
     <nav class="navbar__mobile">
       <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
-      <img class="nav-image" src="./images/menu.png" alt="" />
+      <img class="nav-image" src="./images/menuIcon.png" alt="" />
     </nav>
 
     <nav class="navbar__mobile__open">
@@ -75,7 +76,9 @@
               In a universe molded by ancient powers, the key lies within the
               grasp of its wielders...
             </p>
-            <a href="www.patreon.com"> Watch Legends Series > </a>
+            <div class="button-pair">
+              <a href="www.patreon.com"> Watch Legends Series > </a>
+            </div>
           </div>
         </div>
       </div>
@@ -136,21 +139,21 @@
         <section class="basicTextBox">
           <h2>DIVERSE</h2>
           <p>There is a gem for each classification of Shadawi, Take a look.</p>
-          <!-- <div class="button-pair" id="gem-btn-container">
-            <a href="#" class="gem-btn"
-              ><img src="./images/arrowL.png" alt="previous"
-            /></a>
+          <br /><br />
+          <h3>BEAST</h3>
+          <p>
+            There's a max of 128,000 gems for each class. Once they're gone,
+            gems must be burned in order for mining to continue.
+          </p>
+          <div class="gem-btn-container" style="max-width: 450px;">
             <div>
-              <h4>BEAST</h4>
-              <p>
-                There's a max of 128,000 gems for each class. Once they're gone,
-                gems must be burned in order for mining to continue.
-              </p>
+              <img src="./images/arrowL.png" alt="previous" />
             </div>
-            <a href="#" class="gem-btn"
-              ><img src="./images/arrowR.png" alt="next"
-            /></a>
-          </div> -->
+            <div>
+              <img src="./images/arrowR.png" alt="previous" />
+            </div>
+          </div>
+       
         </section>
 
         <section class="basicTextBox">
@@ -172,54 +175,62 @@
 
     <!-- FOOTER -->
     <div id="footer" class="section-block">
-      <div class="footer-top-section">
-        <!-- <div class="footer-scene-container"> -->
-        <!-- <h2>CREATORS</h2> -->
-        <img src="./images/cr.png" alt="" style="width: 30%" />
-        <!-- <canvas id="footer-canvas"></canvas> -->
-        <!-- </div> -->
-
-        <section class="basicTextBox" style="margin-top: 5vh">
+        <canvas id="footer-canvas"></canvas>
+        <section>
+          <div class="basicTextBox">
           <p>
             Our diverse team of innovative artists and developers brings Shadawi
             Universe to life. Merging artistic brilliance with blockchain
             expertise, they craft unique virtual entities and immersive
-            metaverse experiences. Committed to harnessing the power of NFTs and
-            promoting global connectivity and diversity, they deliver a
-            seamless, secure, and engaging gaming journey.
+            metaverse experiences.
           </p>
           <div class="button-pair">
-            <a href="#">Creators ></a>
+            <a class="neg-btn" href="/creators"> <img src="./images/icon.png" alt=""> Creators ></a>
           </div>
+        </div>
         </section>
-      </div>
 
       <div class="footer-end">
         <br />
         <br />
-        <hr style="max-width: 80%" />
+        <hr style="width: 80%" />
         <div class="footer-links">
           <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
           <div class="social-icons">
             <a href="/"
-              ><img src="./images/patreon-logo.png" alt="patreon"
+              ><img src="./images/x.png" alt="patreon"
             /></a>
             <a href="/"
-              ><img src="./images/patreon-logo.png" alt="patreon"
+              ><img src="./images/instagram.png" alt="patreon"
             /></a>
             <a href="/"
               ><img src="./images/patreon-logo.png" alt="patreon"
             /></a>
           </div>
-          <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
+          <div style="width: 100px;"></div>
         </div>
-        <p>Shadawi® All rights reserved 2024</p>
+
+        <p>Shadawi® All rights reserved 2024</p>        
       </div>
     </div>
 
+
+
+
+
+
     <!-- J A V A S C R I P T -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="./js/initGems.js"></script>
+    
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://threejs.org/build/three.module.js",
+          "three/addons/": "https://threejs.org/examples/jsm/"
+        }
+      }
+    </script>
+
+    <script type="module" src="./js/initGems.js"></script>
     <script type="module" src="./js/initCreators.js"></script>
     <script></script>
   </body>
