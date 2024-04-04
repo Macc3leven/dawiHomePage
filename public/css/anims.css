@@ -25,6 +25,19 @@
   animation-timeline: view(50vh 0px);
 }
 
+.rotating-image {
+  animation: rotateImage 5s linear infinite; /* Adjust duration and timing function as needed */
+}
+
+@keyframes rotateImage {
+  from {
+    transform: rotateY(0deg); /* Starting rotation angle */
+  }
+  to {
+    transform: rotateY(360deg); /* Ending rotation angle */
+  }
+}
+
 /* ANIMATIONS */
 @keyframes spinInFromLeft {
   from {

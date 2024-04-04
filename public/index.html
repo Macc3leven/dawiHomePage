@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="Beast">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./css/home.css" />
     <link rel="stylesheet" href="./css/type.css" />
     <link rel="stylesheet" href="./css/anims.css" />
-    <title>Gems 1</title>
+    <title>Shadawi - Home</title>
   </head>
 
   <!-- BODY -->
@@ -58,7 +58,7 @@
     </div>
 
     <!-- SECTION 1 -->
-    <div class="section-block">
+    <div class="section-block" style="min-height: fit-content">
       <div class="section__content">
         <div class="content__left">
           <!-- Canvas ThreeJs-->
@@ -67,17 +67,33 @@
 
         <div class="content__right">
           <div class="basicTextBox">
-            <h3>
-              <span>A STORYLINE</span>
-              <span>MADE FOR</span>
-              <span>ADVENTURERS</span>
-            </h3>
+            <!-- <h3 style="min-width: max-content;"> -->
+            <!-- <h2>
+              <span>LOGIN</span>
+            </h2>
             <p>
-              In a universe molded by ancient powers, the key lies within the
-              grasp of its wielders...
+              Sign up with your wallet to obtain your player dashboard. The
+              dashboard allows you to monitor your collections, awards,
+              achievements, manage account and more. Start your journey now!
             </p>
             <div class="button-pair">
-              <a href="www.patreon.com"> Watch Legends Series > </a>
+              <a style="padding: 10px 0px" href="/login"> Dashboard > </a>
+            </div> -->
+
+            <div class="basicTextBox">
+              <h3>
+                <span>A STORYLINE</span>
+                <span>MADE FOR</span>
+                <span>ADVENTURERS</span>
+              </h3>
+              <p style="display: flex">
+                <img src="./images/patreon-logo.png" alt="" />
+                In a universe molded by ancient powers, the key lies within the
+                grasp of its wielders...
+              </p>
+              <div class="button-pair">
+                <a href="www.patreon.com"> Watch Legends Series > </a>
+              </div>
             </div>
           </div>
         </div>
@@ -140,20 +156,19 @@
           <h2>DIVERSE</h2>
           <p>There is a gem for each classification of Shadawi, Take a look.</p>
           <br /><br />
-          <h3>BEAST</h3>
-          <p>
+          <h3 id="gemName">BEAST</h3>
+          <p id="gemDescription">
             There's a max of 128,000 gems for each class. Once they're gone,
             gems must be burned in order for mining to continue.
           </p>
-          <div class="gem-btn-container" style="max-width: 450px;">
-            <div>
+          <div class="gem-btn-container" style="max-width: 450px">
+            <div id="prevGemBtn">
               <img src="./images/arrowL.png" alt="previous" />
             </div>
-            <div>
-              <img src="./images/arrowR.png" alt="previous" />
+            <div id="nextGemBtn">
+              <img src="./images/arrowR.png" alt="next" />
             </div>
           </div>
-       
         </section>
 
         <section class="basicTextBox">
@@ -172,12 +187,33 @@
     </div>
 
     <!-- SECTION 4 -->
+    <div class="bottom-section" style="padding-bottom: 16px">
+      <div class="section__content">
+
+        <div class="content__left">
+          <div class="basicTextBox">
+            <h3>Powered by the Polygon Network</h3>
+            <p>
+              Only on the purple chain - Where transactions are low so the
+              entire world can participate in the Dawi Economy.
+            </p>
+          </div>
+        </div>
+
+        <div class="content__right">
+          <div class="image-container">
+            <img  class="rotating-image" src="./images/polygonLogo.png" alt="" />
+          </div>
+        </div>
+
+      </div>
+    </div>
 
     <!-- FOOTER -->
     <div id="footer" class="section-block">
-        <canvas id="footer-canvas"></canvas>
-        <section>
-          <div class="basicTextBox">
+      <canvas id="footer-canvas"></canvas>
+      <section>
+        <div class="basicTextBox">
           <p>
             Our diverse team of innovative artists and developers brings Shadawi
             Universe to life. Merging artistic brilliance with blockchain
@@ -185,10 +221,12 @@
             metaverse experiences.
           </p>
           <div class="button-pair">
-            <a class="neg-btn" href="/creators"> <img src="./images/icon.png" alt=""> Creators ></a>
+            <a class="neg-btn" href="./creators.html">
+              <img src="./images/icon.png" alt="" /> Creators ></a
+            >
           </div>
         </div>
-        </section>
+      </section>
 
       <div class="footer-end">
         <br />
@@ -197,30 +235,21 @@
         <div class="footer-links">
           <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
           <div class="social-icons">
-            <a href="/"
-              ><img src="./images/x.png" alt="patreon"
-            /></a>
-            <a href="/"
-              ><img src="./images/instagram.png" alt="patreon"
-            /></a>
+            <a href="/"><img src="./images/x.png" alt="patreon" /></a>
+            <a href="/"><img src="./images/instagram.png" alt="patreon" /></a>
             <a href="/"
               ><img src="./images/patreon-logo.png" alt="patreon"
             /></a>
           </div>
-          <div style="width: 100px;"></div>
+          <div style="width: 100px"></div>
         </div>
 
-        <p>Shadawi® All rights reserved 2024</p>        
+        <p style="padding-bottom: 16px">Shadawi® All rights reserved 2024</p>
       </div>
     </div>
 
-
-
-
-
-
     <!-- J A V A S C R I P T -->
-    
+
     <script type="importmap">
       {
         "imports": {
@@ -230,9 +259,118 @@
       }
     </script>
 
-    <script type="module" src="./js/initGems.js"></script>
-    <script type="module" src="./js/initCreators.js"></script>
-    <script></script>
+    <!-- <script type="module" src="./js/initGems.js"></script>
+    <script type="module" src="./js/initCreators.js"></script> -->
+    <script type="module">
+      import * as Scene1 from "./js/initGems.js";
+      import * as Scene2 from "./js/initCreators.js";
+
+      Scene1.start();
+      Scene2.start();
+
+      // SWAP CLASSES
+      var classIndex = 0;
+      const classNames = [
+        "Divine",
+        "Gas",
+        "Humanoid",
+        "Beast",
+        "Fairy",
+        "Elemental",
+        "Undead",
+        "Plant",
+      ];
+      const classDescriptions = [
+        "Celestial, enigmatic being with heavenly traits beyond comprehension.",
+        "Gas classified specimen are usually have a body with a fume-like texture.",
+        "Bipedal, upright creature capable of walking on two legs.",
+        "Animalistic specimen displaying primal traits and instincts.",
+        "Petite, magical humanoid often depicted with wings and mischievous tendencies, tied to nature.",
+        "Powerful entity embodying the essence of natural elements such as fire, water, earth, or air.",
+        "Reanimated, once-deceased entity often associated with immortality, malevolence, or decay.",
+        "Organism composed partially or entirely of plant material, exhibiting botanical characteristics and traits.",
+      ];
+
+
+      const prevGemBtn = document.getElementById("prevGemBtn");
+      const nextGemBtn = document.getElementById("nextGemBtn");
+      prevGemBtn.onclick = prevGem;
+      nextGemBtn.onclick = nextGem;
+
+      function nextGem(){
+        
+        classIndex += 1;
+        if(classIndex == gemClass.length - 1) {
+          classIndex -= 1;
+          nextGemBtn.style.opacity = ".2"//turn up grey
+          return;
+        }
+        const gemClass = classNames[classIndex];
+        const gemDesc = classDescriptions[classIndex];
+        setGemBackground(gemClass);
+
+        // change name in Ui
+        setGemDetails(gemClass, gemDesc);
+
+        // change background color
+        setGemBackground(gemClass);
+
+        // change gem in 3js
+      }
+
+      function prevGem(){
+        classIndex -= 1;
+        const gemClass = classNames[classIndex];
+        const gemDesc = classDescriptions[classIndex];
+        setGemBackground(gemClass);
+
+        // change name in Ui
+        setGemDetails(gemClass, gemDesc);
+
+        // change background color
+        setGemBackground(gemClass);
+
+        // change gem in 3js
+
+      }
+
+      setTimeout(nextGem,4000)
+      
+      
+
+      function setGemDetails(name, description){
+        const gemName = document.getElementById("gemName");
+        const gemDescription = document.getElementById("gemDescription");
+        gemName.textContent = name;
+        gemDescription.textContent = description;
+
+      }
+
+      function setGemBackground(gemType = "") {
+        const element = document.documentElement;
+
+        // Remove any previously appended Monster class
+        classNames.forEach((className) => {
+          if (element.classList.contains(className)) {
+            element.classList.remove(className);
+          }
+        });
+
+        // Randomly select a class name
+        const randomIndex = Math.floor(Math.random() * classNames.length);
+        const randomClass = classNames.includes(gemType)
+          ? classNames.find((gem) => gem == gemType)
+          : classNames[randomIndex];
+
+        console.log(randomClass);
+
+        // Apply the selected class to the element
+        element.classList.add(randomClass);
+      }
+
+      setGemBackground("Fairy");
+
+    </script>
   </body>
 
   <!-- JAVASCRIPT -->

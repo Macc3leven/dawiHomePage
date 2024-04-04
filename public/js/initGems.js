@@ -5,8 +5,8 @@ var scene, camera, renderer, cube;
  * init()
  * endInit() 
  */
-init();
-animate();
+
+
 
 function init() {
   // Set up the scene
@@ -59,3 +59,15 @@ window.addEventListener("resize", function () {
   camera.aspect = width / height;
   camera.updateProjectionMatrix();
 });
+
+function start() {
+  init();
+  animate();
+}
+
+function switchGem() {
+  
+}
+
+
+export {start, switchGem}

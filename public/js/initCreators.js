@@ -115,3 +115,12 @@ window.addEventListener("resize", function () {
   updateSize();
   camera.updateProjectionMatrix();
 });
+
+
+function start() {
+  init();
+  animate();
+}
+
+
+export { start }
