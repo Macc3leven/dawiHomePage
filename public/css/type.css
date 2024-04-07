@@ -78,6 +78,10 @@ p {
 @media screen and (max-width: 500px) {
   h1,
   h2 {
-    font-size: 14vw;
+    font-size: 10vw;
+  }
+
+  p{
+    font-size: 14px;
   }
 }

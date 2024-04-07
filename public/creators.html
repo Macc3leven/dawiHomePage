@@ -2,27 +2,192 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Particle Explosion in Three.js</title>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        background-color: rgb(52, 52, 59);
-      }
-      canvas {
-        display: block;
-        width: 100%;
-        height: 100vh;
-        background-color: aqua;
-      }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/nav.css" />
+    <link rel="stylesheet" href="./css/type.css" />
+    <link rel="stylesheet" href="./css/creators.css" />
+    <link rel="stylesheet" href="./css/anims.css" />
+    <title>Creators</title>
   </head>
+
+  <!-- BODY -->
   <body>
-    <canvas id="footer-canvas"> </canvas>
+    <!-- NAV -->
+    <nav class="navbar">
+      <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
+      <div class="nav-content">
+        <a href="#home">Dashboard</a>
+        <a href="#news">Gallery</a>
+        <a href="#news">Mint</a>
+        <a href="creators.html" class="sel">Creators</a>
+      </div>
+    </nav>
+
+    <nav class="navbar__mobile">
+      <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
+      <img class="nav-image" src="./images/menuIcon.png" alt="" />
+    </nav>
+
+    <nav class="navbar__mobile__open">
+      <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
+      <div class="nav-content">
+        <a href="#home">Dashboard</a>
+        <a href="#news">Gallery</a>
+        <a href="#news">Mint</a>
+        <a href="#about">Creators</a>
+      </div>
+    </nav>
+
+    <div id="" class="main-content">
+      <canvas id="star-canvas"> </canvas>
+
+      <div class="basicTextBox">
+        <h2 class="rising-text"><span>CREATORS</span></h2>
+        <p>
+          At the heart of the Shadawi brand are our creators, a diverse team of
+          artists from all walks of life. They infuse their creativity and
+          innovation into the transformation of 2D designs into interactive 3D
+          specimens. Each Shadawi is a unique reflection of their artistry.
+        </p>
+      </div>
+
+      <!-- CREATORS CONTAINER -->
+
+      <div class="card-container">
+        <div class="mico-details-container"><p>Total Creators: 5</p></div>
+
+        <div class="card">
+          <div class="image-wrap">
+            <img src="./images/creators2/oneiric.png" alt="" />
+          </div>
+          <div class="card-text-container">
+            <h3 class="rising-text"><span>Oneiric</span></h3>
+            <p style="padding-bottom: 16px">Total Creations: 8</p>
+            <p>
+              At the heart of the Shadawi brand are our creators, a diverse team
+              of artists from all walks of life. They infuse their creativity
+              and innovation into the transformation of 2D designs into
+              interactive 3D specimens. Each Shadawi is a unique reflection of
+              their artistry.
+            </p>
+            <div>more...</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="image-wrap">
+            <img src="./images/creators2/nior.png" alt="" />
+          </div>
+          <div class="card-text-container">
+            <h3 class="rising-text"><span>Nior</span></h3>
+            <p style="padding-bottom: 16px">Total Creations: 2</p>
+            <p>
+              At the heart of the Shadawi brand are our creators, a diverse team
+              of artists from all walks of life. They infuse their creativity
+              and innovation into the transformation of 2D designs into
+              interactive 3D specimens. Each Shadawi is a unique reflection of
+              their artistry.
+            </p>
+
+            <div>more...</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="image-wrap">
+            <img src="./images/creators2/grimsloki.png" alt="" />
+          </div>
+          <div class="card-text-container">
+            <h3 class="rising-text"><span>Grimsloki</span></h3>
+            <p style="padding-bottom: 16px">Total Creations: 0</p>
+            <p>
+              "I am Grimsloki Gempiloyi. I've been drawing since 2005. I work
+              with digital pen. I love challenges, and I enjoy creating works
+              that are different, unique, and imaginative. And of course, I
+              really like horror and dark artwork"
+            </p>
+
+            <div>more...</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="image-wrap">
+            <img src="./images/creators2/vampirelife.png" alt="" />
+          </div>
+          <div class="card-text-container">
+            <h3 class="rising-text"><span>Vampir3life</span></h3>
+            <p style="padding-bottom: 16px">Total Creations: 3</p>
+            <p>
+              "My glorious specimen are on a level superior to yours, that you
+              cannot comprehend.. pfft Dont waste my time"
+            </p>
+
+            <div>more...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footer" class="section-block">
+      <canvas id="footer-canvas"></canvas>
+      <section>
+        <div class="basicTextBox">
+          <div class="image-wrap">
+            <img
+              style="width: 20vw"
+              src="./images/creators2/vampirelife.png"
+              alt=""
+            />
+          </div>
+          <p>
+            Explore the Shadawi Gallery, a visual database offering an immersive
+            journey into a universe of shadawi hierarchy and lore.
+          </p>
+          <div class="button-pair">
+            <a class="neg-btn" href="./creators.html">
+              <img src="./images/icon.png" alt="" /> Gallery ></a
+            >
+          </div>
+        </div>
+      </section>
+
+      <div class="footer-end">
+        <hr style="width: 80%" />
+        <div class="footer-links">
+          <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
+          <div class="social-icons">
+            <a href="/"><img src="./images/x.png" alt="patreon" /></a>
+            <a href="/"><img src="./images/instagram.png" alt="patreon" /></a>
+            <a href="/"
+              ><img src="./images/patreon-logo.png" alt="patreon"
+            /></a>
+          </div>
+          <div style="width: 100px"></div>
+        </div>
+
+        <p style="padding-bottom: 16px">Shadawi® All rights reserved 2024</p>
+      </div>
+    </div>
+
+    <!-- J A V A S C R I P T -->
     <script type="importmap">
-       
+      {
+        "imports": {
+          "three": "https://threejs.org/build/three.module.js",
+          "three/addons/": "https://threejs.org/examples/jsm/"
+        }
+      }
     </script>
-    <script type="module" src="./js/initCreators.js"></script>
-    <script></script>
+
+    <script type="module" src="./js/initIntro.js"></script>
   </body>
 </html>

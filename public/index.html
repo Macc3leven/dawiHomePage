@@ -3,11 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./css/nav.css" />
     <link rel="stylesheet" href="./css/home.css" />
     <link rel="stylesheet" href="./css/type.css" />
     <link rel="stylesheet" href="./css/anims.css" />
-    <title>Shadawi - Home</title>
+    <title>Shadawi Home</title>
   </head>
 
   <!-- BODY -->
@@ -19,7 +23,7 @@
         <a href="#home">Dashboard</a>
         <a href="#news">Gallery</a>
         <a href="#news">Mint</a>
-        <a href="#about">Creators</a>
+        <a href="creators.html">Creators</a>
       </div>
     </nav>
 
@@ -99,12 +103,45 @@
         </div>
       </div>
     </div>
+
+    <!-- SECTION 2 -->
+    <div class="section-block">
+      <div class="section__content">
+        <div class="content__left">
+          <div id="class-scene">
+           
+          </div>
+        </div>
+
+        <div class="content__right">
+          <div class="basicTextBox">
+            <h2>
+              <span>SPECIMEN</span>
+              <span>CLASSES</span>
+            </h2>
+            <p>
+              We're launching four distinct smart contracts to house our diverse
+              ERC721 NFT collection, each customized for a specific Shadawi
+              build, to ensure every one operates with its distinct
+              functionality
+            </p>
+            <div class="button-pair">
+              <a href="#" class="pos-btn">Mint</a>
+              <a href="#" class="neg-btn">Documentation ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <!-- SECTION 2 -->
     <div class="section-block">
       <div class="section__content rev">
         <div class="content__left">
           <div class="basicTextBox">
-            <h2>BUILDS</h2>
+            <h2>
+              BUILDS
+            </h2>
             <p>
               We're launching four distinct smart contracts to house our diverse
               ERC721 NFT collection, each customized for a specific Shadawi
@@ -120,6 +157,7 @@
 
         <div class="content__right">
           <iframe
+            id="builds-scene"
             src="https://my.spline.design/cards12-de41ef3cbcaaa1890eddfb3c6667e11f/"
             frameborder="0"
             width="100%"
