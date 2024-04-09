@@ -9,14 +9,12 @@ body {
   padding-bottom: 35vh;
   max-width: 100%;
 }
-
 .main-content > canvas {
   position: fixed;
   width: 100%;
   min-height: 100vh;
   z-index: -1;
 }
-
 .mico-details-container{
     padding: 0px 16px;
 }
@@ -47,8 +45,11 @@ body {
   max-width: 100%; /* or a specific px value, depending on your design */
   word-wrap: break-word;
   white-space: normal;
-  margin: -14px 0px;
+  margin: 0px 0px;
   padding: 0px;
+}
+.card-text-container > p {
+  margin: 0px 0px;
 }
 .image-wrap {
   position: relative;
@@ -118,6 +119,37 @@ body {
   margin: 0;
   padding: 0;
 }
+
+
+/* IMAGE CONTENT */
+.image-collection-container{
+    display: flex;
+    gap: 4px;
+}
+.image-container {
+    width: 100px; /* or the width of the element it's in */
+    height: 200px; /* the height you want to crop the image to */
+    overflow: hidden;
+    position: relative;
+    background-color: #7cdaff;
+    cursor: pointer;
+}
+.image-container:hover{
+    animation: spread 1s forwards;
+}
+.image-container img {
+    width: 200px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@keyframes spread {
+    0%{width: 100px;}
+    100%{width: 200px;}
+}
+
 
 /* FOOTER */
 #footer {

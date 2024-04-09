@@ -3,10 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="./css/nav.css" />
     <link rel="stylesheet" href="./css/home.css" />
     <link rel="stylesheet" href="./css/type.css" />
@@ -20,9 +23,9 @@
     <nav class="navbar">
       <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
       <div class="nav-content">
-        <a href="#home">Dashboard</a>
-        <a href="#news">Gallery</a>
-        <a href="#news">Mint</a>
+        <a href="index.html">Dashboard</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="mint.html">Mint</a>
         <a href="creators.html">Creators</a>
       </div>
     </nav>
@@ -106,42 +109,10 @@
 
     <!-- SECTION 2 -->
     <div class="section-block">
-      <div class="section__content">
-        <div class="content__left">
-          <div id="class-scene">
-           
-          </div>
-        </div>
-
-        <div class="content__right">
-          <div class="basicTextBox">
-            <h2>
-              <span>SPECIMEN</span>
-              <span>CLASSES</span>
-            </h2>
-            <p>
-              We're launching four distinct smart contracts to house our diverse
-              ERC721 NFT collection, each customized for a specific Shadawi
-              build, to ensure every one operates with its distinct
-              functionality
-            </p>
-            <div class="button-pair">
-              <a href="#" class="pos-btn">Mint</a>
-              <a href="#" class="neg-btn">Documentation ></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- SECTION 2 -->
-    <div class="section-block">
       <div class="section__content rev">
         <div class="content__left">
           <div class="basicTextBox">
-            <h2>
-              BUILDS
-            </h2>
+            <h2>BUILDS</h2>
             <p>
               We're launching four distinct smart contracts to house our diverse
               ERC721 NFT collection, each customized for a specific Shadawi
@@ -227,7 +198,6 @@
     <!-- SECTION 4 -->
     <div class="bottom-section" style="padding-bottom: 16px">
       <div class="section__content">
-
         <div class="content__left">
           <div class="basicTextBox">
             <h3>Powered by the Polygon Network</h3>
@@ -240,10 +210,9 @@
 
         <div class="content__right">
           <div class="image-container">
-            <img  class="rotating-image" src="./images/polygonLogo.png" alt="" />
+            <img class="rotating-image" src="./images/polygonLogo.png" alt="" />
           </div>
         </div>
-
       </div>
     </div>
 
@@ -305,6 +274,8 @@
 
       Scene1.start();
       Scene2.start();
+      setTimeout(nextGem, 4000);
+
 
       // SWAP CLASSES
       var classIndex = 0;
@@ -318,6 +289,7 @@
         "Undead",
         "Plant",
       ];
+
       const classDescriptions = [
         "Celestial, enigmatic being with heavenly traits beyond comprehension.",
         "Gas classified specimen are usually have a body with a fume-like texture.",
@@ -329,20 +301,30 @@
         "Organism composed partially or entirely of plant material, exhibiting botanical characteristics and traits.",
       ];
 
-
       const prevGemBtn = document.getElementById("prevGemBtn");
       const nextGemBtn = document.getElementById("nextGemBtn");
-      prevGemBtn.onclick = prevGem;
-      nextGemBtn.onclick = nextGem;
+      prevGemBtn.addEventListener("click", prevGem);
+      nextGemBtn.addEventListener("click", nextGem);
 
-      function nextGem(){
-        
+
+      function setOpacity() {
+        if(classIndex >= classNames.length - 1){
+          nextGemBtn.style.opacity = ".2";
+        }else if(classIndex <= 0){
+          prevGemBtn.style.opacity = ".2";
+        }else{
+          nextGemBtn.style.opacity = "1";
+          prevGemBtn.style.opacity = "1";
+        }
+      }
+
+      function nextGem() {
         classIndex += 1;
-        if(classIndex == gemClass.length - 1) {
-          classIndex -= 1;
-          nextGemBtn.style.opacity = ".2"//turn up grey
+        if (classIndex >= classNames.length - 1) {
+          classIndex = classNames.length - 1;
           return;
         }
+
         const gemClass = classNames[classIndex];
         const gemDesc = classDescriptions[classIndex];
         setGemBackground(gemClass);
@@ -354,10 +336,18 @@
         setGemBackground(gemClass);
 
         // change gem in 3js
+
+        console.log({ classIndex, gemClass });
+        setOpacity();
       }
 
-      function prevGem(){
+      function prevGem() {
         classIndex -= 1;
+        if (classIndex < 0) {
+          classIndex = 0;
+          return;
+        }
+
         const gemClass = classNames[classIndex];
         const gemDesc = classDescriptions[classIndex];
         setGemBackground(gemClass);
@@ -370,18 +360,16 @@
 
         // change gem in 3js
 
+        console.log({ classIndex, gemClass });
+        setOpacity();
       }
 
-      setTimeout(nextGem,4000)
-      
-      
 
-      function setGemDetails(name, description){
+      function setGemDetails(name, description) {
         const gemName = document.getElementById("gemName");
         const gemDescription = document.getElementById("gemDescription");
         gemName.textContent = name;
         gemDescription.textContent = description;
-
       }
 
       function setGemBackground(gemType = "") {
@@ -400,13 +388,9 @@
           ? classNames.find((gem) => gem == gemType)
           : classNames[randomIndex];
 
-        console.log(randomClass);
-
         // Apply the selected class to the element
         element.classList.add(randomClass);
       }
-
-      setGemBackground("Fairy");
 
     </script>
   </body>

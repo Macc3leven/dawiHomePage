@@ -1,24 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <svg width="400" height="400">
-        <!-- Define the clipping path -->
-        <defs>
-          <clipPath id="myClip">
-            <!-- Define the shape of the clipping path (in this case, a circle) -->
-            <circle cx="200" cy="200" r="100" />
-          </clipPath>
-        </defs>
-      
-        <!-- Apply the clipping path to an element -->
-        <image xlink:href="image.jpg" width="400" height="400" clip-path="url(#myClip)" />
-      </svg>
-      
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/nav.css" />
+    <link rel="stylesheet" href="./css/type.css" />
+    <link rel="stylesheet" href="./css/gallery.css" />
+    <link rel="stylesheet" href="./css/anims.css" />
+    <title>Gallery</title>
+  </head>
+
+  <!-- BODY -->
+  <body>
+    <!-- NAV -->
+    <nav class="navbar">
+      <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
+      <div class="nav-content">
+        <a href="index.html">Dashboard</a>
+        <a href="gallery.html" class="sel">Gallery</a>
+        <a href="mint.html">Mint</a>
+        <a href="creators.html">Creators</a>
+      </div>
+    </nav>
+
+    <nav class="navbar__mobile">
+      <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
+      <img class="nav-image" src="./images/menuIcon.png" alt="" />
+    </nav>
+
+    <nav class="navbar__mobile__open">
+      <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
+      <div class="nav-content">
+        <a href="index.html">Dashboard</a>
+        <a href="gallery.html" class="sel">Gallery</a>
+        <a href="mint.html">Mint</a>
+        <a href="creators.html">Creators</a>
+      </div>
+    </nav>
+
+    <section class="main-content">
+      <canvas id="star-canvas"> </canvas>
+
+      <div class="basicTextBox">
+        <h2 class="rising-text"><span>GALLERY</span></h2>
+        <p>
+          Browse through the shadawi galaxy and find the rarist of specimen.
+        </p>
+      </div>
+
+      <!-- GALLERY CONTAINER -->
+      <div class="gallery-container">
+
+        <!-- Gallery Configurations -->
+        <div class="settings-container">
+          <div class="dropdown-container">
+            <div class="dropdown-filter">
+              <label for="sortby">Sort By:</label>
+              <select id="sortby">
+                <option value="name-asc">Name (A-Z)</option>
+                <option value="name-des">Name (Z-A)</option>
+                <option value="sid-asc">SID (low-high)</option>
+                <option value="sid-dec">SID (high-low)</option>
+              </select>
+            </div>
+
+            <div class="dropdown-filter">
+              <label for="filter">Filter:</label>
+              <select id="filter">
+                <optgroup label="PurgLvl">
+                  <option value="weak">Weak</option>
+                  <option value="resistant">Resistant</option>
+                  <option value="strong">Strong</option>
+                  <option value="mighty">Mighty</option>
+                  <option value="supermighty">Supermighty</option>
+                  <option value="unpurgable">Unpurgable</option>
+                </optgroup>
+                <optgroup label="Class">
+                  <option value="divine">Divine</option>
+                  <option value="fairy">Fairy</option>
+                  <option value="beast">Beast</option>
+                  <option value="plant">Plant</option>
+                  <option value="humanoid">Humanoid</option>
+                  <option value="undead">Undead</option>
+                  <option value="gas">Gas</option>
+                  <option value="weather">Weather</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+          <div class="search-box">
+            <input type="text" placeholder="Search Database" />
+          </div>
+          <nav class="tabs-container">
+            <a href="#specimen" class="sel">Specimen</a>
+            <a href="#tokens">Tokens</a>
+            <a href="#owners">Owners</a>
+          </nav>
+        </div>
+
+        <!-- Gallery Content -->
+        <div class="gallery">
+          <div class="card">
+            <img src="./images/domigra.png" alt="Description" />
+            <div class="card-info">
+              <h5>NAME</h5>
+              <p>#0000</p>
+              <span>Character Type</span>
+            </div>
+          </div>
+          <div class="card">
+            <img src="./images/domigra.png" alt="Description" />
+            <div class="card-info">
+              <h5>NAME</h5>
+              <p>#0000</p>
+              <span>Character Type</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- End -->
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+      <div class="footer-end">
+        <hr style="width: 80%" />
+        <div class="footer-links">
+          <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
+          <div class="social-icons">
+            <a href="/"><img src="./images/x.png" alt="patreon" /></a>
+            <a href="/"><img src="./images/instagram.png" alt="patreon" /></a>
+            <a href="/"
+              ><img src="./images/patreon-logo.png" alt="patreon"
+            /></a>
+          </div>
+          <div style="width: 100px"></div>
+        </div>
+
+        <p style="padding-bottom: 16px">Shadawi® All rights reserved 2024</p>
+      </div>
+
+    <!-- J A V A S C R I P T -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://threejs.org/build/three.module.js",
+          "three/addons/": "https://threejs.org/examples/jsm/"
+        }
+      }
+    </script>
+
+    <script type="module" src="./js/initIntro.js"></script>
+    <script>
+      // Object to store the filter options
+      const filterOptions = {
+        sortBy: "rarity", // default value
+        order: "asc", // default value
+      };
+
+      const sortSelect = document.getElementById("sortby");
+      const filterSelect = document.getElementById("filter");
+
+      // Manage sort
+      sortSelect.addEventListener("change", function () {
+        const valueType = String(this.value).split("-");
+
+        // parse sort and manage
+        filterOptions.sortBy = valueType[0];
+        filterOptions.order = valueType[1];
+
+        saveFilterOptions();
+      });
+
+      // Manage Filters
+      filterSelect.addEventListener("change", function () {
+        // `this` refers to the select element
+        console.log("Selected option value:", this.value);
+
+        const optGroupLabel = this.options[this.selectedIndex].parentNode.label;
+        const safeLabel =
+          optGroupLabel.charAt(0).toLowerCase() + optGroupLabel.slice(1);
+        console.log("Selected option group:", optGroupLabel, safeLabel);
+
+        var newFilter = {};
+        newFilter[safeLabel] = this.value;
+        filterOptions.filter = newFilter;
+
+        // Perform any other actions with the selected filter
+        saveFilterOptions();
+      });
+
+      // Get the input element
+      const searchInput = document.getElementById("searchInput");
+
+      // Function to handle the input event
+      function handleSearchInput(event) {
+        const query = event.target.value; // Get the current value of the input field
+        console.log(query); // For demonstration purposes, we're just logging it to the console
+
+        // Here, you would typically call a function to perform the search:
+        // searchDatabase(query);
+      }
+
+      // Add an event listener to the search input
+      searchInput.addEventListener("input", handleSearchInput);
+
+      function saveFilterOptions() {
+        console.log("Filter Options Saved:", filterOptions);
+        // Here you can do more things with the filter options, like updating the displayed data
+      }
+    </script>
+  </body>
 </html>
