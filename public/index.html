@@ -32,18 +32,25 @@
 
     <nav class="navbar__mobile">
       <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
-      <img class="nav-image" src="./images/menuIcon.png" alt="" />
+      <img
+        id="toggleNavButton"
+        class="nav-image"
+        src="./images/menuIcon.png"
+        alt=""
+      />
     </nav>
 
-    <nav class="navbar__mobile__open">
-      <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
+    <div id="sidePanel" class="side-panel">
+      <!-- Content of your side panel goes here -->
+      <p id="closeBtn">X</p>
       <div class="nav-content">
         <a href="#home">Dashboard</a>
         <a href="#news">Gallery</a>
         <a href="#news">Mint</a>
         <a href="#about">Creators</a>
       </div>
-    </nav>
+      <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
+    </div>
 
     <!-- HERO -->
     <div id="hero" class="section-block">
@@ -266,8 +273,25 @@
       }
     </script>
 
-    <!-- <script type="module" src="./js/initGems.js"></script>
-    <script type="module" src="./js/initCreators.js"></script> -->
+<!-- NAV -->
+    <script>
+      const closeBtn = document.getElementById("closeBtn")
+      const toggleNavButton = document.getElementById("toggleNavButton")
+      // Get the side panel and the button from the DOM
+      const sidePanel = document.getElementById('sidePanel');
+
+      // Function to toggle the side panel
+      function toggleSidePanel() {
+        sidePanel.classList.toggle('open');
+      }toggleSidePanel();//toggleSidePanel();
+
+      // Add click event listener to the button
+      toggleNavButton.addEventListener('click', toggleSidePanel);
+      closeBtn.addEventListener('click', toggleSidePanel);
+
+    </script>
+
+    <!-- GEMS HANDLER -->
     <script type="module">
       import * as Scene1 from "./js/initGems.js";
       import * as Scene2 from "./js/initCreators.js";
@@ -275,7 +299,6 @@
       Scene1.start();
       Scene2.start();
       setTimeout(nextGem, 4000);
-
 
       // SWAP CLASSES
       var classIndex = 0;
@@ -306,13 +329,12 @@
       prevGemBtn.addEventListener("click", prevGem);
       nextGemBtn.addEventListener("click", nextGem);
 
-
       function setOpacity() {
-        if(classIndex >= classNames.length - 1){
+        if (classIndex >= classNames.length - 1) {
           nextGemBtn.style.opacity = ".2";
-        }else if(classIndex <= 0){
+        } else if (classIndex <= 0) {
           prevGemBtn.style.opacity = ".2";
-        }else{
+        } else {
           nextGemBtn.style.opacity = "1";
           prevGemBtn.style.opacity = "1";
         }
@@ -320,7 +342,7 @@
 
       function nextGem() {
         classIndex += 1;
-        if (classIndex >= classNames.length - 1) {
+        if (classIndex >= classNames.length) {
           classIndex = classNames.length - 1;
           return;
         }
@@ -364,7 +386,6 @@
         setOpacity();
       }
 
-
       function setGemDetails(name, description) {
         const gemName = document.getElementById("gemName");
         const gemDescription = document.getElementById("gemDescription");
@@ -391,9 +412,9 @@
         // Apply the selected class to the element
         element.classList.add(randomClass);
       }
-
     </script>
-  </body>
 
-  <!-- JAVASCRIPT -->
+    <!-- NAVBAR -->
+    <script></script>
+  </body>
 </html>
