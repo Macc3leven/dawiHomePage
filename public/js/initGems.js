@@ -1,14 +1,8 @@
-import { THREE } from "./threeWrapper.js";
-var scene, camera, renderer, cube;
-
-/** This is the script for gems 
- * init()
- * endInit() 
- */
+import { THREE, GLTFLoader } from "./threeWrapper.js";
+var scene, camera, renderer, gemPrefab;
 
 
-
-function init() {
+async function init() {
   // Set up the scene
   scene = new THREE.Scene();
 
@@ -30,25 +24,21 @@ function init() {
   renderer.setClearColor("#98fb98", 0); // background color
   renderer.setSize(window.innerWidth, window.innerHeight);
 
-  // Create a cube and add to the scene
+  // Create a gemPrefab and add to the scene
   var geometry = new THREE.BoxGeometry(1, 1, 1);
   var material = new THREE.MeshBasicMaterial({ color: "#FF5733" });
-  cube = new THREE.Mesh(geometry, material);
-  scene.add(cube);
+  gemPrefab = new THREE.Mesh(geometry, material);
+  scene.add(gemPrefab);
 }
 
 function animate() {
   requestAnimationFrame(animate);
 
-  // Rotate the cube
-  cube.rotation.x += 0.01;
-  cube.rotation.y += 0.01;
+  // Rotate the gemPrefab
+  gemPrefab.rotation.x += 0.01;
+  gemPrefab.rotation.y += 0.01;
 
   renderer.render(scene, camera);
-}
-
-function endInit() {
-    
 }
 
 // Handle window resize
@@ -60,8 +50,8 @@ window.addEventListener("resize", function () {
   camera.updateProjectionMatrix();
 });
 
-function start() {
-  init();
+async function start() {
+  await init();
   animate();
 }
 

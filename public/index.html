@@ -19,6 +19,42 @@
 
   <!-- BODY -->
   <body>
+    <!-- LOADER -->
+    <style>
+      #loadingScreen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgb(26, 26, 26);
+        color: #ffffff;
+        z-index: 10000;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+      }
+      #loadingProgress {
+        width: 50%;
+        height: 20px;
+        background: grey;
+        margin-top: 10px;
+      }
+    </style>
+    <div id="loadingScreen">
+      <h4>Loading...</h4>
+      <div id="loadingProgress">
+        <div
+          style="
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #de6969, pink);
+          "
+        ></div>
+      </div>
+    </div>
+
     <!-- NAV -->
     <nav class="navbar">
       <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
@@ -44,10 +80,10 @@
       <!-- Content of your side panel goes here -->
       <p id="closeBtn">X</p>
       <div class="nav-content">
-        <a href="#home">Dashboard</a>
-        <a href="#news">Gallery</a>
-        <a href="#news">Mint</a>
-        <a href="#about">Creators</a>
+        <a href="index.html">Dashboard</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="mint.html">Mint</a>
+        <a href="creators.html">Creators</a>
       </div>
       <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
     </div>
@@ -65,8 +101,8 @@
           blockchain. Collect, Transform, and Battle, Become the ultimate mage.
         </p>
         <div class="button-pair">
-          <a href="#" class="pos-btn">Gallery</a>
-          <a href="#" class="neg-btn">Dashboard ></a>
+          <a href="gallery.html" class="pos-btn">Gallery</a>
+          <a href="/dashboard" class="neg-btn">Dashboard ></a>
         </div>
       </div>
     </div>
@@ -81,19 +117,6 @@
 
         <div class="content__right">
           <div class="basicTextBox">
-            <!-- <h3 style="min-width: max-content;"> -->
-            <!-- <h2>
-              <span>LOGIN</span>
-            </h2>
-            <p>
-              Sign up with your wallet to obtain your player dashboard. The
-              dashboard allows you to monitor your collections, awards,
-              achievements, manage account and more. Start your journey now!
-            </p>
-            <div class="button-pair">
-              <a style="padding: 10px 0px" href="/login"> Dashboard > </a>
-            </div> -->
-
             <div class="basicTextBox">
               <h3>
                 <span>A STORYLINE</span>
@@ -106,7 +129,11 @@
                 grasp of its wielders...
               </p>
               <div class="button-pair">
-                <a href="www.patreon.com"> Watch Legends Series > </a>
+                <a
+                  href="https://patreon.com/LegendsOfShadawi?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink"
+                >
+                  Watch Legends Series >
+                </a>
               </div>
             </div>
           </div>
@@ -127,8 +154,12 @@
               functionality
             </p>
             <div class="button-pair">
-              <a href="#" class="pos-btn">Mint</a>
-              <a href="#" class="neg-btn">Documentation ></a>
+              <a href="mint.html" class="pos-btn">Mint</a>
+              <a
+                href="https://shadawi.gitbook.io/shadawi-official-docs"
+                class="neg-btn"
+                >Documentation ></a
+              >
             </div>
           </div>
         </div>
@@ -179,10 +210,14 @@
           </p>
           <div class="gem-btn-container" style="max-width: 450px">
             <div id="prevGemBtn">
-              <img src="./images/arrowL.png" alt="previous" />
+              <img
+                class="rising-text"
+                src="./images/arrowL.png"
+                alt="previous"
+              />
             </div>
             <div id="nextGemBtn">
-              <img src="./images/arrowR.png" alt="next" />
+              <img class="rising-text" src="./images/arrowR.png" alt="next" />
             </div>
           </div>
         </section>
@@ -194,8 +229,8 @@
             gems must be burned in order for mining to continue.
           </p>
           <div class="button-pair">
-            <a href="#" class="pos-btn">Mint Gems</a>
-            <a href="#" class="neg-btn">Documentation ></a>
+            <a href="mint.html" class="pos-btn">Mint Gems</a>
+            <a href="https://shadawi.gitbook.io/shadawi-official-docs" class="neg-btn">Documentation ></a>
           </div>
         </section>
         <br /><br />
@@ -249,9 +284,14 @@
         <div class="footer-links">
           <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
           <div class="social-icons">
-            <a href="/"><img src="./images/x.png" alt="patreon" /></a>
-            <a href="/"><img src="./images/instagram.png" alt="patreon" /></a>
-            <a href="/"
+            <a href="https://twitter.com/shadawi_nft"
+              ><img src="./images/x.png" alt="patreon"
+            /></a>
+            <a href="https://www.instagram.com/Shadawi_NFT/"
+              ><img src="./images/instagram.png" alt="patreon"
+            /></a>
+            <a
+              href="https://patreon.com/LegendsOfShadawi?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink"
               ><img src="./images/patreon-logo.png" alt="patreon"
             /></a>
           </div>
@@ -263,7 +303,6 @@
     </div>
 
     <!-- J A V A S C R I P T -->
-
     <script type="importmap">
       {
         "imports": {
@@ -273,22 +312,20 @@
       }
     </script>
 
-<!-- NAV -->
+    <!-- NAVBAR -->
     <script>
-      const closeBtn = document.getElementById("closeBtn")
-      const toggleNavButton = document.getElementById("toggleNavButton")
-      // Get the side panel and the button from the DOM
-      const sidePanel = document.getElementById('sidePanel');
+      const closeBtn = document.getElementById("closeBtn");
+      const toggleNavButton = document.getElementById("toggleNavButton");
+      const sidePanel = document.getElementById("sidePanel");
 
       // Function to toggle the side panel
       function toggleSidePanel() {
-        sidePanel.classList.toggle('open');
-      }toggleSidePanel();//toggleSidePanel();
+        sidePanel.classList.toggle("open");
+      }
 
       // Add click event listener to the button
-      toggleNavButton.addEventListener('click', toggleSidePanel);
-      closeBtn.addEventListener('click', toggleSidePanel);
-
+      toggleNavButton.addEventListener("click", toggleSidePanel);
+      closeBtn.addEventListener("click", toggleSidePanel);
     </script>
 
     <!-- GEMS HANDLER -->
@@ -298,7 +335,6 @@
 
       Scene1.start();
       Scene2.start();
-      setTimeout(nextGem, 4000);
 
       // SWAP CLASSES
       var classIndex = 0;
@@ -339,6 +375,7 @@
           prevGemBtn.style.opacity = "1";
         }
       }
+      setOpacity();
 
       function nextGem() {
         classIndex += 1;
@@ -414,7 +451,83 @@
       }
     </script>
 
-    <!-- NAVBAR -->
-    <script></script>
+    <!-- LOADER -->
+    <script type="module">
+      // Function to monitor the loading of various elements
+      var proms,
+        total = 0,
+        completed = 0;
+      function monitorLoadingProgress(elements) {
+        let loadedCount = 0;
+        const totalCount = elements.length;
+        console.log("Monitoring...");
+
+        // Create a promise for each image loading
+        const imagePromises = Array.from(document.images).map(
+          (img) =>
+            new Promise((resolve) => {
+              console.log("image loaded.");
+              if (img.complete) {
+                resolve();
+              } else {
+                img.addEventListener("load", resolve);
+                img.addEventListener("error", resolve); // Resolve even if there is an error
+              }
+            })
+        );
+
+        // For Three.js canvases, we assume you have a custom event that fires when loading is done
+        const canvasPromises = elements.canvases.map((canvas) => {
+          return new Promise((resolve) => {
+            // Your Three.js loading code should trigger a 'loaded' event on the canvas
+            console.log("canvas loaded.");
+            canvas.addEventListener("loaded", resolve);
+          });
+        });
+
+        // For the iframe, listen for the 'load' event
+        const iframePromise = new Promise((resolve) => {
+          const iframe = document.getElementById("builds-scene");
+          console.log(iframe);
+          iframe.addEventListener("load", resolve);
+        });
+
+        // Combine all promises and update the progress bar
+        proms = [...imagePromises, iframePromise];
+        total = proms.length;
+      }
+
+      // Execute the function with the elements to monitor
+      monitorLoadingProgress({
+        images: document.images,
+        canvases: [
+          document.getElementById("gem-canvas"),
+          document.getElementById("footer-canvas"),
+        ],
+      });
+
+      // await all
+      function updateProgressBar(progress) {
+        document.querySelector(
+          "#loadingProgress > div"
+        ).style.width = `${progress}%`;
+        if (progress > 98) {
+          document.getElementById("loadingScreen").style.display = "none";
+        }
+      }
+
+      for (const promise of proms) {
+        const inf = {
+          total,
+          completed,
+          promise,
+          progress: (completed / total) * 100,
+        };
+        console.log(inf);
+        await promise; // Await the completion of the current promise
+        completed++; // Increment the count of completed promises
+        updateProgressBar((completed / total) * 100); // Update progress bar based on the percentage of completed promises
+      }
+    </script>
   </body>
 </html>
