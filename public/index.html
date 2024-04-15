@@ -230,7 +230,11 @@
           </p>
           <div class="button-pair">
             <a href="mint.html" class="pos-btn">Mint Gems</a>
-            <a href="https://shadawi.gitbook.io/shadawi-official-docs" class="neg-btn">Documentation ></a>
+            <a
+              href="https://shadawi.gitbook.io/shadawi-official-docs"
+              class="neg-btn"
+              >Documentation ></a
+            >
           </div>
         </section>
         <br /><br />
@@ -313,20 +317,7 @@
     </script>
 
     <!-- NAVBAR -->
-    <script>
-      const closeBtn = document.getElementById("closeBtn");
-      const toggleNavButton = document.getElementById("toggleNavButton");
-      const sidePanel = document.getElementById("sidePanel");
-
-      // Function to toggle the side panel
-      function toggleSidePanel() {
-        sidePanel.classList.toggle("open");
-      }
-
-      // Add click event listener to the button
-      toggleNavButton.addEventListener("click", toggleSidePanel);
-      closeBtn.addEventListener("click", toggleSidePanel);
-    </script>
+    <script src="./js/navbar.js"></script>
 
     <!-- GEMS HANDLER -->
     <script type="module">
@@ -453,80 +444,58 @@
 
     <!-- LOADER -->
     <script type="module">
+      var progression = 0;
+      var progressInterval = setInterval(runProgress, 100);
+
       // Function to monitor the loading of various elements
-      var proms,
-        total = 0,
-        completed = 0;
-      function monitorLoadingProgress(elements) {
-        let loadedCount = 0;
-        const totalCount = elements.length;
-        console.log("Monitoring...");
+      function monitorLoadingProgress() {
+        console.log("Loading...");
+
+        function pushProgress(amount, dataname) {
+          progression += amount;
+          if(dataname) console.log("loaded: "+dataname);
+        }
 
         // Create a promise for each image loading
-        const imagePromises = Array.from(document.images).map(
-          (img) =>
-            new Promise((resolve) => {
-              console.log("image loaded.");
-              if (img.complete) {
-                resolve();
-              } else {
-                img.addEventListener("load", resolve);
-                img.addEventListener("error", resolve); // Resolve even if there is an error
-              }
-            })
-        );
+        const imagePromises = Array.from(document.images).map((img) => {
+          if (img.complete) {
+            console.log("image loaded fast.");
+            pushProgress(1);
+          } else {
+            img.addEventListener("load", pushProgress(1, "img"));
+            img.addEventListener("error", pushProgress(0)); // Resolve even if there is an error
+          }
+        });
 
         // For Three.js canvases, we assume you have a custom event that fires when loading is done
-        const canvasPromises = elements.canvases.map((canvas) => {
-          return new Promise((resolve) => {
-            // Your Three.js loading code should trigger a 'loaded' event on the canvas
-            console.log("canvas loaded.");
-            canvas.addEventListener("loaded", resolve);
-          });
-        });
+        const gemCanvas = document.getElementById("gem-canvas");
+        gemCanvas.addEventListener("loaded", pushProgress(10, "gem canvas"));
+        
+        const footerCanvas = document.getElementById("footer-canvas");
+        footerCanvas.addEventListener("loaded", pushProgress(10, "footer canvas"));
 
         // For the iframe, listen for the 'load' event
-        const iframePromise = new Promise((resolve) => {
-          const iframe = document.getElementById("builds-scene");
-          console.log(iframe);
-          iframe.addEventListener("load", resolve);
-        });
-
-        // Combine all promises and update the progress bar
-        proms = [...imagePromises, iframePromise];
-        total = proms.length;
+        const iframe = document.getElementById("builds-scene");
+        iframe.addEventListener("load", pushProgress(10, "build scene"));
       }
 
       // Execute the function with the elements to monitor
-      monitorLoadingProgress({
-        images: document.images,
-        canvases: [
-          document.getElementById("gem-canvas"),
-          document.getElementById("footer-canvas"),
-        ],
-      });
+      monitorLoadingProgress();
 
-      // await all
+      // Update the progress
       function updateProgressBar(progress) {
         document.querySelector(
           "#loadingProgress > div"
         ).style.width = `${progress}%`;
         if (progress > 98) {
+          clearInterval(progressInterval);
           document.getElementById("loadingScreen").style.display = "none";
         }
       }
 
-      for (const promise of proms) {
-        const inf = {
-          total,
-          completed,
-          promise,
-          progress: (completed / total) * 100,
-        };
-        console.log(inf);
-        await promise; // Await the completion of the current promise
-        completed++; // Increment the count of completed promises
-        updateProgressBar((completed / total) * 100); // Update progress bar based on the percentage of completed promises
+      async function runProgress() {
+        progression += 2;
+        updateProgressBar(progression);
       }
     </script>
   </body>

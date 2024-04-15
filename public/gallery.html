@@ -24,7 +24,7 @@
       <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
       <div class="nav-content">
         <a href="index.html">Dashboard</a>
-        <a href="gallery.html" class="sel">Gallery</a>
+        <a href="gallery.html">Gallery</a>
         <a href="mint.html">Mint</a>
         <a href="creators.html">Creators</a>
       </div>
@@ -32,18 +32,25 @@
 
     <nav class="navbar__mobile">
       <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
-      <img class="nav-image" src="./images/menuIcon.png" alt="" />
+      <img
+        id="toggleNavButton"
+        class="nav-image"
+        src="./images/menuIcon.png"
+        alt=""
+      />
     </nav>
 
-    <nav class="navbar__mobile__open">
-      <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
+    <div id="sidePanel" class="side-panel">
+      <!-- Content of your side panel goes here -->
+      <p id="closeBtn">X</p>
       <div class="nav-content">
         <a href="index.html">Dashboard</a>
-        <a href="gallery.html" class="sel">Gallery</a>
+        <a href="gallery.html">Gallery</a>
         <a href="mint.html">Mint</a>
         <a href="creators.html">Creators</a>
       </div>
-    </nav>
+      <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
+    </div>
 
     <section class="main-content">
       <canvas id="star-canvas"> </canvas>
@@ -56,8 +63,44 @@
       </div>
 
       <!-- GALLERY CONTAINER -->
-      <div class="gallery-container">
+      <div class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
 
+          <h3 class="rising-text">
+            <span id="name">NAME</span>
+            <hr />
+            <span id="sid">#000</span>
+          </h3>
+
+          <div class="content-wrap">
+            <img src="./images/domigra.png" alt="Description" />
+            <div class="details">
+              <p id="description" style="text-align: center">
+                <strong>DESCRIPTION</strong> <br />
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque
+                tempora excepturi exercitationem velit libero culpa soluta, id
+                consectetur natus voluptates enim ipsum, quod quam doloremque
+                earum, qui aperiam voluptas consequuntur.
+              </p>
+              <br />
+              <p id="form">Form: 1 of 1</p>
+              <p id="class">Class: Humanoid</p>
+              <p id="knownAb">
+                Known Abilities: Classname Classname Classname Classname
+              </p>
+              <p id="purg">Purg Level: Strong</p>
+            </div>
+          </div>
+
+          <div class="button-pair">
+            <a id="display_link" href="gallery.html" class="pos-btn">Display</a>
+            <!-- <a href="#" class="neg-btn">Next Form ></a> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-container">
         <!-- Gallery Configurations -->
         <div class="settings-container">
           <div class="dropdown-container">
@@ -96,7 +139,7 @@
             </div>
           </div>
           <div class="search-box">
-            <input type="text" placeholder="Search Database" />
+            <input id="searchInput" type="text" placeholder="Search Database" />
           </div>
           <nav class="tabs-container">
             <a href="#specimen" class="sel">Specimen</a>
@@ -106,47 +149,45 @@
         </div>
 
         <!-- Gallery Content -->
-        <div class="gallery">
-          <div class="card">
-            <img src="./images/domigra.png" alt="Description" />
-            <div class="card-info">
-              <h5>NAME</h5>
-              <p>#0000</p>
-              <span>Character Type</span>
-            </div>
+        <div id="gallery" class="gallery">
+          <div id="noDataTag" class="basicTextBox">
+            <h3>NO DATA</h3>
+            <p>Try clearing the searchbar, or adjusting filters. If all else try refreshing the page</p>
           </div>
-          <div class="card">
+          <!-- <div id="#100" class="card">
             <img src="./images/domigra.png" alt="Description" />
-            <div class="card-info">
-              <h5>NAME</h5>
-              <p>#0000</p>
-              <span>Character Type</span>
-            </div>
-          </div>
 
+            <div class="card-info">
+              <div class="bold">
+                <h3>VIGINTILLION</h3>
+                <h3>#000</h3>
+              </div>
+              <div class="details">
+                <p>Population: 9,999</p>
+              </div>
+              <span>Shadawi®</span>
+            </div>
+          </div> -->
         </div>
-
         <!-- End -->
       </div>
     </section>
 
     <!-- FOOTER -->
-      <div class="footer-end">
-        <hr style="width: 80%" />
-        <div class="footer-links">
-          <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
-          <div class="social-icons">
-            <a href="/"><img src="./images/x.png" alt="patreon" /></a>
-            <a href="/"><img src="./images/instagram.png" alt="patreon" /></a>
-            <a href="/"
-              ><img src="./images/patreon-logo.png" alt="patreon"
-            /></a>
-          </div>
-          <div style="width: 100px"></div>
+    <div class="footer-end">
+      <hr style="width: 80%" />
+      <div class="footer-links">
+        <img class="logo-mark" src="./images/shadawi-logo-full.png" alt="" />
+        <div class="social-icons">
+          <a href="/"><img src="./images/x.png" alt="patreon" /></a>
+          <a href="/"><img src="./images/instagram.png" alt="patreon" /></a>
+          <a href="/"><img src="./images/patreon-logo.png" alt="patreon" /></a>
         </div>
-
-        <p style="padding-bottom: 16px">Shadawi® All rights reserved 2024</p>
+        <div style="width: 100px"></div>
       </div>
+
+      <p style="padding-bottom: 16px">Shadawi® All rights reserved 2024</p>
+    </div>
 
     <!-- J A V A S C R I P T -->
     <script type="importmap">
@@ -160,14 +201,17 @@
 
     <script type="module" src="./js/initIntro.js"></script>
     <script>
-      // Object to store the filter options
+      // - - - SEARCHBAR AND FILTERS - - - //
       const filterOptions = {
-        sortBy: "rarity", // default value
+        searchValue: "",
+        sortBy: "name", // default value
         order: "asc", // default value
       };
 
       const sortSelect = document.getElementById("sortby");
       const filterSelect = document.getElementById("filter");
+      const searchInput = document.getElementById("searchInput");
+      var searchInputTimeOut = null;
 
       // Manage sort
       sortSelect.addEventListener("change", function () {
@@ -198,25 +242,277 @@
         saveFilterOptions();
       });
 
-      // Get the input element
-      const searchInput = document.getElementById("searchInput");
-
       // Function to handle the input event
-      function handleSearchInput(event) {
+      // Add an event listener to the search input
+      searchInput.addEventListener("input", function (event) {
         const query = event.target.value; // Get the current value of the input field
+        filterOptions.searchValue = query;
         console.log(query); // For demonstration purposes, we're just logging it to the console
 
-        // Here, you would typically call a function to perform the search:
-        // searchDatabase(query);
-      }
+        if (searchInputTimeOut) clearTimeout(searchInputTimeOut);
+        searchInputTimeOut = setTimeout(submitQuery, 2500);
+      });
 
-      // Add an event listener to the search input
-      searchInput.addEventListener("input", handleSearchInput);
+      searchInput.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+          event.preventDefault(); // Prevent default action (form submission, etc.)
+          // Clear any existing timeout since we're handling the query immediately
+          if (searchInputTimeOut) clearTimeout(searchInputTimeOut);
+          submitQuery(); // Immediately submit the query when Enter is pressed
+        }
+      });
+
+      function submitQuery() {
+        console.log("query submit!", filterOptions);
+      }
 
       function saveFilterOptions() {
         console.log("Filter Options Saved:", filterOptions);
         // Here you can do more things with the filter options, like updating the displayed data
       }
+
+      // - - - M O D A L - - - //
+      const modal = document.querySelector(".modal");
+      const modalContent = document.querySelector(".modal-content");
+      const closeButton = document.querySelector(".close");
+
+      // Function to open the modal
+      function openModal() {
+        modal.style.display = "block";
+      }
+
+      // Function to close the modal
+      function closeModal() {
+        modal.style.display = "none";
+      }
+
+      // Event listener to close the modal when the user clicks outside of it
+      window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+
+      // Event listener to close the modal when the user clicks the close button
+      closeButton.addEventListener("click", function () {
+        closeModal();
+      });
+
+      function populateModal(specimen = domg) {
+        document.getElementById("name").textContent = specimen.name;
+        document.getElementById("sid").textContent = "#" + specimen.SID;
+        const discriptionTag = "<strong>LEGEND:</strong> <br />";
+        document.getElementById(
+          "description"
+        ).innerHTML = `${discriptionTag} ${specimen.description}`;
+        document.getElementById(
+          "form"
+        ).textContent = `Forms: 1 of ${specimen.forms.length}`;
+        document.getElementById(
+          "class"
+        ).textContent = `Class: ${specimen.class}`;
+        document.getElementById(
+          "knownAb"
+        ).textContent = `Known Abilities: ${specimen.knownAbilities}`;
+        document.getElementById(
+          "purg"
+        ).textContent = `Purg Level: ${specimen.purgLvl}`;
+
+        // Display link
+        document.getElementById(
+          "display_link"
+        ).href = `/display-specimen/${specimen.SID}`;
+      }
+
+      // - - - C A R D S - - - //
+      const publicGateway =
+        "https://beige-worthwhile-hornet-694.mypinata.cloud/ipfs/";
+
+      const queryData = [];
+      const domg = {
+        SID: 101,
+        name: "Domigra",
+        description:
+          "Puny purgator you have little comprehension of my strength, take me to the battle!",
+        totalForms: 1,
+        population: 8,
+        owned: 0,
+        build: "Base",
+        purgLvl: "supermighty",
+        creator: "Oneiric",
+        knownAbilities: "Zephr Display, Inferno DeceInferno Decent",
+        forms: [
+          {
+            name: "Domigra",
+            abilityPack: [
+              {
+                form: 1,
+                skin: 1,
+                strike: {
+                  status: true,
+                  skill: "samurai",
+                  name: "Zephr Display",
+                  dataname: "zephyr display_x",
+                  description:
+                    "Pounces on the opponent with a furious spinning blade vortex mastery",
+                  mods: { dam: 1.4, power: 2 },
+                  updatedAt: "2024-02-25T08:26:46.332Z",
+                },
+                ultStrike: {
+                  status: true,
+                  skill: "mystical",
+                  name: "Inferno Decent",
+                  dataname: "slot2",
+                  description: "",
+                  mods: { dam: 2.1, stun: 4 },
+                  updatedAt: "2024-02-25T08:26:46.332Z",
+                },
+              },
+              {
+                form: 1,
+                skin: 2,
+                strike: {
+                  status: true,
+                  skill: "samurai",
+                  name: "Zephr Display",
+                  dataname: "zephyr display_x",
+                  description:
+                    "Pounces on the opponent with a furious spinning blade vortex mastery",
+                  mods: { dam: 1.6, power: 1.2 },
+                  updatedAt: "2024-02-25T08:26:46.332Z",
+                },
+              },
+            ],
+            size: "humanoid",
+            class: "undead",
+            skill: "samurai",
+            health: 6640,
+            damage: 889,
+            defense: 600,
+            time: 5,
+            owned: 0,
+            form: 1,
+            build: "Base",
+            purgLvl: "supermighty",
+            stun: 278,
+            agility: 720,
+            power: 593,
+            currentForm: 1,
+            files: [
+              {
+                filename: "mugshot_1000.png",
+                fileType: "png",
+                type: "mugshot",
+                form: 1,
+                skin: 1,
+                link: "QmZRX2F8rq56Gk47YbQid4cNFiswwKUf31bMHhTrDRF8eY/mugshot_1000.png",
+              },
+              {
+                filename: "prefab_1000.glb",
+                fileType: "glb",
+                type: "prefab",
+                form: 1,
+                skin: 1,
+                link: "QmZRX2F8rq56Gk47YbQid4cNFiswwKUf31bMHhTrDRF8eY/prefab_1000.glb",
+              },
+            ],
+          },
+        ],
+        locations: {
+          assetsDirectory: "QmZRX2F8rq56Gk47YbQid4cNFiswwKUf31bMHhTrDRF8eY",
+          mainDirectory: "",
+        },
+        class: "undead",
+        skill: "samurai",
+      };
+      var i = 0;
+
+      // create new card
+      function newCard(specimenJson) {
+        const spec = domg;
+        const gallery = document.getElementById("gallery");
+
+        // Create the container div with class 'card-info'
+        const card = document.createElement("div");
+        card.className = "card";
+        card.id = `#${spec.SID + i}`;
+        i++;
+
+        const img = document.createElement("img");
+        img.src =
+          publicGateway + spec.locations.assetsDirectory + "/mugshot_1000.png";
+        card.appendChild(img);
+
+        const cardInfo = document.createElement("div");
+        cardInfo.className = "card-info";
+
+        // Create the bold div and its h3 children
+        const boldDiv = document.createElement("div");
+        boldDiv.className = "bold";
+        cardInfo.appendChild(boldDiv);
+
+        const h3_1 = document.createElement("h3");
+        h3_1.textContent = spec.name;
+        boldDiv.appendChild(h3_1);
+
+        const h3_2 = document.createElement("h3");
+        h3_2.textContent = `#${spec.SID}`;
+        boldDiv.appendChild(h3_2);
+
+        // Create the details div and its p child
+        const detailsDiv = document.createElement("div");
+        detailsDiv.className = "details";
+        cardInfo.appendChild(detailsDiv);
+
+        const p = document.createElement("p");
+        p.textContent = `Population: ${spec.population}`;
+        detailsDiv.appendChild(p);
+
+        // Create the span element
+        const span = document.createElement("span");
+        span.textContent = "Shadawi®";
+        cardInfo.appendChild(span);
+
+        // add card to gallery
+        card.appendChild(cardInfo);
+        console.log(card.innerHTML, card.id);
+        gallery.appendChild(card);
+      }
+
+      function cardInteract(event) {
+        console.log(this.id);
+        populateModal();
+        openModal();
+      }
+
+      function populateGallery() {
+        //all card function
+        // newCard();
+        // newCard();
+        // newCard();
+
+        // Select all elements with the class 'card'
+        const cards = document.querySelectorAll(".card");
+        console.log(cards);
+
+        // Add event listeners to each card
+        cards.forEach((card) => {
+          card.addEventListener("click", cardInteract);
+        });
+      }
+
+      function clearGallery() {
+        // Select all elements with the class 'card'
+        const cards = document.querySelectorAll(".card");
+
+        // Loop through the NodeList and remove each element
+        cards.forEach((card) => {
+          card.remove();
+        });
+      }
+
+      // init
+      populateGallery();
     </script>
   </body>
 </html>
