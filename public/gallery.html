@@ -150,7 +150,7 @@
 
         <!-- Gallery Content -->
         <div id="gallery" class="gallery">
-          <div id="noDataTag" class="basicTextBox">
+          <div id="noDataTag" class="basicTextBox" style="padding: 16px;">
             <h3>NO DATA</h3>
             <p>Try clearing the searchbar, or adjusting filters. If all else try refreshing the page</p>
           </div>
@@ -200,6 +200,7 @@
     </script>
 
     <script type="module" src="./js/initIntro.js"></script>
+    <script src="./js/navbar.js"></script>
     <script>
       // - - - SEARCHBAR AND FILTERS - - - //
       const filterOptions = {
@@ -426,6 +427,9 @@
         skill: "samurai",
       };
       var i = 0;
+      var totalCards = 0;
+
+      // display no data.
 
       // create new card
       function newCard(specimenJson) {
@@ -477,6 +481,8 @@
         card.appendChild(cardInfo);
         console.log(card.innerHTML, card.id);
         gallery.appendChild(card);
+
+        totalCards++
       }
 
       function cardInteract(event) {
@@ -487,9 +493,10 @@
 
       function populateGallery() {
         //all card function
-        // newCard();
-        // newCard();
-        // newCard();
+        document.getElementById("noDataTag").style.display = "none";
+        newCard();
+        newCard();
+        newCard();
 
         // Select all elements with the class 'card'
         const cards = document.querySelectorAll(".card");
@@ -509,6 +516,8 @@
         cards.forEach((card) => {
           card.remove();
         });
+
+        totalCards = 0;
       }
 
       // init
